@@ -89,7 +89,7 @@ config.plugins.SundtekControlCenter.sunconf.vtuneracceleration = ConfigYesNo(def
 config.plugins.SundtekControlCenter.sunconf.searchversion = ConfigYesNo(default=False)
 
 orginal_dmm = False
-if not os.path.exists("/proc/stb/info/boxtype") and not os.path.exists("/proc/stb/info/boxtype") and config.plugins.SundtekControlCenter.sunconf.searchversion.value:
+if not os.path.exists("/proc/stb/info/vumodel") and not os.path.exists("/proc/stb/info/boxtype") and os.path.exists("/proc/stb/info/model") and config.plugins.SundtekControlCenter.sunconf.searchversion.value:
     config.plugins.SundtekControlCenter.sunconf.searchversion.value = False
     config.plugins.SundtekControlCenter.sunconf.searchversion.save()
     orginal_dmm = True
@@ -99,7 +99,7 @@ config.plugins.SundtekControlCenter.sunconf.networkmode = ConfigSelection(defaul
 
 ## version string #########################################################
 
-sundtekcontrolcenter_version = "20151106-1"
+sundtekcontrolcenter_version = "20160419-1"
 testOK = None
 
 ###########################################################################
@@ -340,13 +340,13 @@ class SundtekControlCenter(Screen, ConfigListScreen):
            tunertwo=""
            for i in sundtek_devices:
               if i == 0:
-                 self["tunerone"] = Label(str(sundtek_devices[0]['device']))
+                 self["tunerone"] = Label(str(sundtek_devices[0]['device'])[2:])
               elif i == 1:
-                 tunertwo = sundtek_devices[1]['device']
+                 tunertwo = str(sundtek_devices[1]['device'][2:])
               else:
-                 tunertwo += "\n"+sundtek_devices[i]['device']
+                 tunertwo += "\n"+str(sundtek_devices[i]['device'][2:])
 
-           self["tunertwo"]=Label(str(tunertwo))
+           self["tunertwo"]=Label(tunertwo)
            
         else:
               self["tunerone"] = Label(_("No stick found"))
@@ -992,6 +992,9 @@ class SundtekControlCenter(Screen, ConfigListScreen):
 
 #### yellow key - restart section
     def restartwhat(self):
+        if self.session.nav.getRecordings():
+            self.session.open(MessageBox, _("Warning! Recording is currently running."), MessageBox.TYPE_INFO)
+            return
         options = [
             (_("Restart E2"), self.restartenigma),
             (_("Reboot box"), self.restartingbox),
@@ -1195,6 +1198,11 @@ class SundtekControlCenter(Screen, ConfigListScreen):
         configfile.save()
         self.sundtekconfigfile()
         self.setsettings()
+        if self.session.nav.getRecordings():
+            self.session.open(MessageBox, _("Warning! Recording is currently running."), MessageBox.TYPE_INFO)
+            return
+        else:
+            self.session.nav.stopService()
         if (os.path.exists("/opt/bin/mediasrv")) and (os.path.exists("/opt/bin/mediaclient")) and (os.path.exists("/usr/sundtek/sun_dvb.sh")):
             try:
                 from enigma import eEPGCache
@@ -1202,4 +1210,4 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 epgcache.save()
             except:
                 pass
-            self.prompt("/usr/sundtek/sun_dvb.sh start_c")
+            self.prompt("sleep 8 && /usr/sundtek/sun_dvb.sh start_c")
