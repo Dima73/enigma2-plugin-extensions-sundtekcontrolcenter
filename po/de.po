@@ -1,0 +1,267 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SundtekControlCenter\n"
+"POT-Creation-Date: 2010-11-26 22:42+0100\n"
+"PO-Revision-Date: 2015-04-18 13:07+0200\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"Language: de\n"
+
+msgid ""
+"\n"
+"Update to current sundtek driver version?"
+msgstr ""
+"\n"
+"Auf die aktuelle sundtek Treiberversion aktualisieren?"
+
+msgid ""
+"\n"
+"your driver version:\n"
+msgstr ""
+"\n"
+"Installierte Treiberversion:\n"
+
+msgid "          Network IP"
+msgstr "          Netzwerk IP"
+
+msgid "      DVB Transmission Way, Stick 2"
+msgstr "      DVB Übertragungsweg, Stick 2"
+
+msgid "      Driver autoupdate"
+msgstr "      Treiber autoupdate"
+
+msgid "      Loglevel"
+msgstr "      Loglevel"
+
+msgid "      Network IP"
+msgstr "      Netzwerk IP"
+
+msgid "      vTuner acceleration for DM800"
+msgstr "      vTuner Beschleunigung für DM800"
+
+msgid "*     USB/Network"
+msgstr "*     USB/Netzwerk"
+
+msgid "* Configuration support"
+msgstr "* Konfigurationsunterstützung"
+
+msgid "* USB/Network"
+msgstr "* USB/Netzwerk"
+
+msgid "* Use Second Stick"
+msgstr "* Zweiten Stick verwenden?"
+
+msgid ""
+"A configuration file exists.\n"
+"You selected no configuration support.\n"
+"\n"
+"Remove configuration file /etc/sundtek.conf?"
+msgstr ""
+"Es exisitiert eine Konfigurationsdatei.\n"
+"Sie haben allerdings ohne Konfigurationsunterstützung ausgewählt.\n"
+"\n"
+"Soll die Konfiguration (/etc/sundtek.conf) daher gelöscht werden?"
+
+msgid ""
+"A newer version of the sundtekcontrolcenter plugin is available. Install now?"
+msgstr ""
+"Eine neue Version des SundtekControlCenter Plugin ist verfügbar. Jetzt "
+"aktualisieren?"
+
+msgid "Add show plugin"
+msgstr "Hinzufügen show plugin"
+
+msgid "Autostart"
+msgstr "Autostart"
+
+msgid "Backup Drivers to HDD"
+msgstr "Treiber auf Festplatte sichern"
+
+msgid "Bouquet + = install or update driver"
+msgstr "Bouquet + = Treiber installieren / aktualisieren"
+
+msgid "Bouquet - = scan for IPTV server addresses"
+msgstr "Bouquet - = Nach IP Servern suchen"
+
+msgid "Check for a newer version of the SundtekControlCenter"
+msgstr "Nach einer neuen Version des SundtekControlCenter suchen"
+
+msgid ""
+"Check not possible. Please ensure that the Box is connected to the internet."
+msgstr "Suche nicht möglich. Bitte Verbindung zum Internet prüfen."
+
+msgid "Configuration file was deleted."
+msgstr "Konfigurationsdatei wurde gelöscht."
+
+msgid "DVB Transmission Way"
+msgstr "DVB Übertragungsweg"
+
+msgid "Disable the IP server"
+msgstr "IP Server deaktivieren"
+
+msgid "Enable / Disable IP server"
+msgstr "IP Server aktivieren / deaktivieren"
+
+msgid "Enable the IP server"
+msgstr "IP Server aktivieren"
+
+msgid "Exit"
+msgstr "Beenden"
+
+msgid "Help"
+msgstr "Hilfe anzeigen"
+
+msgid "IP server is disabled"
+msgstr "IP Server ist deaktiviert"
+
+msgid "IP server is enabled"
+msgstr "IP Server ist aktiviert"
+
+msgid "Info = show tuner informations"
+msgstr "Info = Tunerinfomationen anzeigen"
+
+msgid "Install or Update sundtek Driver"
+msgstr "sundtek Treiber installieren oder aktualisieren "
+
+msgid ""
+"It seems the sundtek driver is not installed or not installed properly. "
+"Install the driver now?"
+msgstr ""
+"Das system hat festgestellt, dass der sundtek Treiber nicht oder falsch "
+"installiert ist. Den Treiber jetzt installieren?"
+
+msgid "Latest version is already installed"
+msgstr "Die aktuellste Version ist bereits installiert."
+
+msgid "Menu = call further functions..."
+msgstr "Menu = Weitere Funktionen..."
+
+msgid "No IPTV media server found"
+msgstr "Es wurden keine IPTV Medienserver gefunden."
+
+msgid "No stick found"
+msgstr "Kein stick gefunden"
+
+msgid "OK/ green = activate settings"
+msgstr "OK oder grün um die Einstellungen zu übernehmen"
+
+msgid "Restart"
+msgstr "Neustart"
+
+msgid "Restart Dreambox"
+msgstr "Dreambox neu starten"
+
+msgid "Restart E2"
+msgstr "Neustart E2"
+
+msgid "Restore Drivers from HDD"
+msgstr "Treiber von Festplatte wiederherstellen"
+
+msgid "Restore was canceled"
+msgstr "Wiederherstellung abgebrochen."
+
+msgid "Restoreing:  %s"
+msgstr "Wiederherstellung:  %s"
+
+msgid "Save and start tuner"
+msgstr "Speichern und Tuner starten"
+
+msgid "Save setup"
+msgstr "Einstellungen Speichern"
+
+msgid "Scan for IPTV server addresses"
+msgstr "Nach IP Servern suchen"
+
+msgid "Service Mode"
+msgstr "Service Modus"
+
+msgid ""
+"Service Mode starts a tunnel to the sundtek server. Please start service "
+"mode only if requested by sundtek support.\n"
+"\n"
+"Start Service Mode now?"
+msgstr ""
+"Service Modus startet einen Tunnel zum sundtek Server. Bitte den Service "
+"Modus nur nach Aufforderung des sundtek supports starten.\n"
+"\n"
+"Service Modus jetzt starten?"
+
+msgid "Setup"
+msgstr "Einstellen"
+
+msgid "Show /etc/sundtek.conf"
+msgstr "Offen /etc/sundtek.conf"
+
+msgid "Show tuner informations"
+msgstr "Tunerinfomationen anzeigen"
+
+msgid ""
+"Sorry, only one or no stick ID was found.\n"
+"\n"
+"Please check that all sticks are plugged correctly. The config file was "
+"written without stick information."
+msgstr ""
+"Leider wurde nur eine oder keine Stick ID gefunden.\n"
+"\n"
+"Bitte überprüfen Sie ob alle Sticks richtig gesteckt sind. Die Konfiguration "
+"wurde ohne Stick Information geschrieben."
+
+msgid "Start Tuner"
+msgstr "Tuner starten"
+
+msgid "Sundtek Control Center"
+msgstr "Sundtek Control Center"
+
+msgid ""
+"Sundtek legal notice:\n"
+"This software comes without any warranty, use it at your own risk?\n"
+"Continue?"
+msgstr ""
+"sundtek Treiberinstallation:\n"
+"Diese software kommt ohne Gewährleistung. Verwendendung nur auf eigenes "
+"Risiko?\n"
+"Installation fortsetzen?"
+
+msgid ""
+"SundtekControlCenter successfully updated! You need to restart Enigma2. "
+"Restart now?"
+msgstr ""
+"Das SundtekControlCenter wurde erfolgreich aktualisiert! Sie müssen enigma2 "
+"neu starten. Jetzt neu starten?"
+
+msgid "The SundtekControlCenter is updated in background"
+msgstr "Das SundtekControlCenter wird im Hintergrund aktualisiert"
+
+msgid "Use following address as media server?\n"
+msgstr "Folgende IP Adresse verwenden und übernehmen?\n"
+
+msgid "driver update available"
+msgstr "treiber update verfügbar"
+
+msgid "ext menu"
+msgstr "ext menü"
+
+msgid "ext/scan menu"
+msgstr "ext/scan menü"
+
+msgid "installs the sundtek driver and runs related shellscripts"
+msgstr "installiert den sundtek Treiber und die dazugehörigen Shellsckripts"
+
+msgid "latest sundtek driver version:\n"
+msgstr "Aktuelle sundtek Treiberversion:\n"
+
+msgid "nowhere"
+msgstr "nirgendwo"
+
+msgid "scan menu"
+msgstr "scan menü"
+
+msgid "scc update available"
+msgstr "controlcenter update verfügbar"
+
+msgid "sundtek control center plugin"
+msgstr "sundtek control center plugin"
