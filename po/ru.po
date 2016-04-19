@@ -1,0 +1,319 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-28 19:54+0100\n"
+"PO-Revision-Date: 2015-05-31 19:16+0200\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: openli.org\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8\n"
+"Language: ru\n"
+
+msgid ""
+"\n"
+"Update to current sundtek driver version?"
+msgstr ""
+"\n"
+"Обновить текущую версию драйверов sundtek?"
+
+msgid ""
+"\n"
+"your driver version:\n"
+msgstr ""
+"\n"
+"ваша версия драйверов:\n"
+
+msgid "          Network IP"
+msgstr "          Сетевой IP"
+
+msgid "      Autostart"
+msgstr "      Автостарт"
+
+msgid "      DVB Transmission Way, Stick 2"
+msgstr "      DVB способ передачи, стик 2"
+
+msgid "      DVB Transmission Way, Stick 3"
+msgstr "      DVB способ передачи, стик 3"
+
+msgid "      Driver autoupdate"
+msgstr "      Автообновление драйверов"
+
+msgid "      Loglevel"
+msgstr "      Уровень лога"
+
+msgid "      Network IP"
+msgstr "      Сетевой IP"
+
+msgid "      Networkmode"
+msgstr "      Режим сети"
+
+msgid "      dmhwpidfilter"
+msgstr "      dmhwpid-фильтр"
+
+msgid "      vTuner acceleration for DM800"
+msgstr "      vTuner ускорение для DM800"
+
+msgid "*     USB/Network"
+msgstr "*     USB/Сеть"
+
+msgid "* Configuration support"
+msgstr "* Поддержка конфигурации"
+
+msgid "* USB/Network"
+msgstr "* USB/Сеть"
+
+msgid "* Use Second Stick"
+msgstr "* Использовать второй стик"
+
+msgid "* Use Third Stick"
+msgstr "* Использовать третий стик"
+
+msgid ""
+"A newer version of the sundtekcontrolcenter plugin is available. Install now?"
+msgstr ""
+"Новая версия плагина 'центр управления sundtek' доступна. Установить ее "
+"сейчас?"
+
+msgid "Add show plugin"
+msgstr "Добавить показ плагина"
+
+msgid "Auto checking new version driver/plugin"
+msgstr "Авто проверка новых версий драйвера/плагина"
+
+msgid "Backup Drivers to HDD"
+msgstr "Бекап драйверов на HDD"
+
+msgid "Bouquet + = install or update driver"
+msgstr "B/P/CH + = установка или обновление драйверов"
+
+msgid "Bouquet - = scan for IPTV server addresses"
+msgstr "B/P/CH - = сканирование для IPTV адресов сервера"
+
+msgid "Build date :"
+msgstr "Дата сборки :"
+
+msgid "Check for a newer version of the SundtekControlCenter"
+msgstr "Проверка наличия более новой версии 'Центр управления Sundtek'"
+
+msgid ""
+"Check not possible. Please ensure that the Box is connected to the internet."
+msgstr ""
+"Проверка не доступна. Пожалуйста, убедитесь, что ресивер подключен к "
+"интернету."
+
+msgid "DVB Transmission Way"
+msgstr "DVB способ передачи"
+
+msgid "Disable the IP server"
+msgstr "Отключить сервер IP"
+
+msgid "Enable / Disable IP server"
+msgstr "Включить / отключить сервер IP"
+
+msgid "Enable the IP server"
+msgstr "Включить сервер IP"
+
+msgid "Exit"
+msgstr "Выход"
+
+msgid "IP server is disabled"
+msgstr "Сервер IP отключен"
+
+msgid "IP server is enabled"
+msgstr "Сервер IP включен"
+
+msgid "Info = show tuner informations"
+msgstr "Info/EPG = показать информацию тюнера"
+
+msgid "Install or Update sundtek Driver"
+msgstr "Установка или обновление драйверов sundtek"
+
+msgid ""
+"It seems the sundtek driver is not installed or not installed properly. "
+"Install the driver now?"
+msgstr ""
+"Кажется, драйвера sundtek не установлены или установлены неправильно. "
+"Установить драйвера сейчас?"
+
+msgid "Latest version is already installed"
+msgstr "Последняя версия уже установлена"
+
+msgid "Menu = call further functions..."
+msgstr "Меню = вызов экстра функций..."
+
+msgid "No IPTV media server found"
+msgstr "Не найден медиа сервер IPTV"
+
+msgid "No backup file was found."
+msgstr "Не найдены файлы бекапа."
+
+msgid "No backups found."
+msgstr "Бекапы не найдены."
+
+msgid "No stick found"
+msgstr "Не найден стик"
+
+msgid "Not found folder '/media/hdd'."
+msgstr "Не найдена папка '/media/hdd'."
+
+msgid "Not found network connection"
+msgstr "Не найдено сетевое подключение"
+
+msgid "OK/ green = activate settings"
+msgstr "OK/ зеленая = активировать настройки"
+
+msgid "Please enter IP:"
+msgstr "Пожалуйста, введите IP:"
+
+msgid "Reboot box"
+msgstr "Перезагрузка ресивера"
+
+msgid "Restart"
+msgstr "Рестарт"
+
+msgid "Restart E2"
+msgstr "Рестарт Энигма2"
+
+msgid "Restore Drivers from HDD"
+msgstr "Восстановление драйверов с HDD"
+
+msgid "Restore was canceled"
+msgstr "Восстановление было отменено"
+
+msgid "Restoreing:  %s"
+msgstr "Восстановление:  %s"
+
+msgid "Save and start tuner"
+msgstr "Сохранить и старт тюнера"
+
+msgid "Save setup"
+msgstr "Сохранить настройки"
+
+msgid "Scan for IPTV server addresses"
+msgstr "Сканирование для адресов сервера IPTV"
+
+msgid "Service Mode"
+msgstr "Сервисный режим"
+
+msgid ""
+"Service Mode starts a tunnel to the sundtek server. Please start service "
+"mode only if requested by sundtek support.\n"
+"\n"
+"Start Service Mode now?"
+msgstr ""
+"Сервисный режим стартует в тоннеле сервера sundtek. Пожалуйста, начинайте  "
+"старт сервисного режима только по запросу sundtek поддержки.\n"
+"\n"
+"Выполнить старт сервисного режима сейчас?"
+
+msgid "Setup"
+msgstr "Сохранить настройки"
+
+msgid "Show /etc/sundtek.conf"
+msgstr "Открыть /etc/sundtek.conf"
+
+msgid "Show tuner informations"
+msgstr "Показать информацию тюнера"
+
+msgid ""
+"Sorry, only one or no stick ID was found.\n"
+"\n"
+"Please check that all sticks are plugged correctly. The config file was "
+"written without stick information."
+msgstr ""
+"К сожалению, только один или вообще не найден стик с ID.\n"
+"\n"
+"Пожалуйста, убедитесь, что все стики были подключены корректно. "
+"Конфигурационный файл был записан без информации стика."
+
+msgid "Start Tuner"
+msgstr "Старт тюнера"
+
+msgid "Sundtek Control Center"
+msgstr "Центр управления Sundtek"
+
+msgid ""
+"Sundtek legal notice:\n"
+"This software comes without any warranty, use it at your own risk?\n"
+"Continue?"
+msgstr ""
+"Правовое уведомление Sundtek:\n"
+"Этот софт поставляется без каких-либо гарантий, используйте его на свой "
+"страх и риск.\n"
+"Продолжить?"
+
+msgid ""
+"SundtekControlCenter successfully updated! You need to restart Enigma2. "
+"Restart now?"
+msgstr ""
+"'Центр управления Sundtek' успешно обновлен! Необходим рестарт Энигма2. "
+"Выполнить рестарт сейчас?"
+
+msgid "The SundtekControlCenter is updated in background"
+msgstr "'Центр управления Sundtek' обновляется в фоновом режиме"
+
+msgid "Use following address as media server?\n"
+msgstr "Использовать следующий адрес как медиа-сервер?\n"
+
+msgid "Use following addresses?\n"
+msgstr "Использовать следующие адреса?\n"
+
+msgid "driver update available"
+msgstr "обновление драйверов доступно"
+
+msgid "ext menu"
+msgstr "меню дополнений"
+
+msgid "ext/scan menu"
+msgstr "скан./доп. меню"
+
+msgid "hide"
+msgstr "скрыть"
+
+msgid "installs the sundtek driver and runs related shellscripts"
+msgstr "установка драйверов sundtek и запуск shell-команд"
+
+msgid "latest sundtek driver version:\n"
+msgstr "последняя версия драйверов:\n"
+
+msgid "max"
+msgstr "максимум"
+
+msgid "min"
+msgstr "минимум"
+
+msgid "nowhere"
+msgstr "нигде"
+
+msgid "off"
+msgstr "выкл."
+
+msgid "on"
+msgstr "вкл."
+
+msgid "scan menu"
+msgstr "меню сканирования"
+
+msgid "scc update available"
+msgstr "обновление для 'ЦУ-sundtek' доступно"
+
+msgid "show"
+msgstr "показать"
+
+msgid "sundtek control center plugin"
+msgstr "Центр управления sundtek"
+
+msgid "via Network"
+msgstr "через сеть"
+
+msgid "via USB"
+msgstr "через USB"
+
+msgid "www.sundtek.de unavailable"
+msgstr "www.sundtek.de недоступен"
+
+msgid "Сlose"
+msgstr "Закрыть"

@@ -1,0 +1,397 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-31 21:46+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: SundtekControlCenter.py:552
+msgid ""
+"\n"
+"Update to current sundtek driver version?"
+msgstr ""
+
+#: SundtekControlCenter.py:552
+msgid ""
+"\n"
+"your driver version:\n"
+msgstr ""
+
+#: SundtekControlCenter.py:420 SundtekControlCenter.py:431
+msgid "          Network IP"
+msgstr ""
+
+#: SundtekControlCenter.py:398
+msgid "      Autostart"
+msgstr ""
+
+#: SundtekControlCenter.py:415
+msgid "      DVB Transmission Way, Stick 2"
+msgstr ""
+
+#: SundtekControlCenter.py:427
+msgid "      DVB Transmission Way, Stick 3"
+msgstr ""
+
+#: SundtekControlCenter.py:399
+msgid "      Driver autoupdate"
+msgstr ""
+
+#: SundtekControlCenter.py:400
+msgid "      Loglevel"
+msgstr ""
+
+#: SundtekControlCenter.py:410
+msgid "      Network IP"
+msgstr ""
+
+#: SundtekControlCenter.py:401
+msgid "      Networkmode"
+msgstr ""
+
+#: SundtekControlCenter.py:402
+msgid "      dmhwpidfilter"
+msgstr ""
+
+#: SundtekControlCenter.py:403
+msgid "      vTuner acceleration for DM800"
+msgstr ""
+
+#: SundtekControlCenter.py:416 SundtekControlCenter.py:428
+msgid "*     USB/Network"
+msgstr ""
+
+#: SundtekControlCenter.py:395
+msgid "* Configuration support"
+msgstr ""
+
+#: SundtekControlCenter.py:407
+msgid "* USB/Network"
+msgstr ""
+
+#: SundtekControlCenter.py:413
+msgid "* Use Second Stick"
+msgstr ""
+
+#: SundtekControlCenter.py:425
+msgid "* Use Third Stick"
+msgstr ""
+
+#: SundtekControlCenter.py:510
+msgid ""
+"A newer version of the sundtekcontrolcenter plugin is available. Install now?"
+msgstr ""
+
+#: SundtekControlCenter.py:437
+msgid "Add show plugin"
+msgstr ""
+
+#: SundtekControlCenter.py:436
+msgid "Auto checking new version driver/plugin"
+msgstr ""
+
+#: SundtekControlCenter.py:379
+msgid "Backup Drivers to HDD"
+msgstr ""
+
+#: SundtekControlCenter.py:233
+msgid "Bouquet + = install or update driver"
+msgstr ""
+
+#: SundtekControlCenter.py:234
+msgid "Bouquet - = scan for IPTV server addresses"
+msgstr ""
+
+#: SundtekControlCenter.py:531
+msgid "Build date :"
+msgstr ""
+
+#: SundtekControlCenter.py:381
+msgid "Check for a newer version of the SundtekControlCenter"
+msgstr ""
+
+#: SundtekControlCenter.py:497
+msgid ""
+"Check not possible. Please ensure that the Box is connected to the internet."
+msgstr ""
+
+#: SundtekControlCenter.py:406
+msgid "DVB Transmission Way"
+msgstr ""
+
+#: SundtekControlCenter.py:95 SundtekControlCenter.py:220
+msgid "DVB-"
+msgstr ""
+
+#: SundtekControlCenter.py:102 SundtekControlCenter.py:130
+#: SundtekControlCenter.py:134
+msgid "DVB-C"
+msgstr ""
+
+#: SundtekControlCenter.py:102 SundtekControlCenter.py:130
+#: SundtekControlCenter.py:134
+msgid "DVB-T2"
+msgstr ""
+
+#: SundtekControlCenter.py:627
+msgid "Disable the IP server"
+msgstr ""
+
+#: SundtekControlCenter.py:376
+msgid "Enable / Disable IP server"
+msgstr ""
+
+#: SundtekControlCenter.py:626
+msgid "Enable the IP server"
+msgstr ""
+
+#: SundtekControlCenter.py:226
+msgid "Exit"
+msgstr ""
+
+#: SundtekControlCenter.py:637
+msgid "IP server is disabled"
+msgstr ""
+
+#: SundtekControlCenter.py:633
+msgid "IP server is enabled"
+msgstr ""
+
+#: SundtekControlCenter.py:232
+msgid "Info = show tuner informations"
+msgstr ""
+
+#: SundtekControlCenter.py:374
+msgid "Install or Update sundtek Driver"
+msgstr ""
+
+#: SundtekControlCenter.py:966
+msgid ""
+"It seems the sundtek driver is not installed or not installed properly. "
+"Install the driver now?"
+msgstr ""
+
+#: SundtekControlCenter.py:495 SundtekControlCenter.py:506
+msgid "Latest version is already installed"
+msgstr ""
+
+#: SundtekControlCenter.py:231
+msgid "Menu = call further functions..."
+msgstr ""
+
+#: SundtekControlCenter.py:596
+msgid "No IPTV media server found"
+msgstr ""
+
+#: SundtekControlCenter.py:686
+msgid "No backup file was found."
+msgstr ""
+
+#: SundtekControlCenter.py:688
+msgid "No backups found."
+msgstr ""
+
+#: SundtekControlCenter.py:254
+msgid "No stick found"
+msgstr ""
+
+#: SundtekControlCenter.py:664
+msgid "Not found folder '/media/hdd'."
+msgstr ""
+
+#: SundtekControlCenter.py:485
+msgid "Not found network connection"
+msgstr ""
+
+#: SundtekControlCenter.py:230
+msgid "OK/ green = activate settings"
+msgstr ""
+
+#: SundtekControlCenter.py:343
+msgid "Please enter IP:"
+msgstr ""
+
+#: SundtekControlCenter.py:706
+msgid "Reboot box"
+msgstr ""
+
+#: SundtekControlCenter.py:228
+msgid "Restart"
+msgstr ""
+
+#: SundtekControlCenter.py:705
+msgid "Restart E2"
+msgstr ""
+
+#: SundtekControlCenter.py:380
+msgid "Restore Drivers from HDD"
+msgstr ""
+
+#: SundtekControlCenter.py:696
+msgid "Restore was canceled"
+msgstr ""
+
+#: SundtekControlCenter.py:694
+#, python-format
+msgid "Restoreing:  %s"
+msgstr ""
+
+#: SundtekControlCenter.py:229
+msgid "Save and start tuner"
+msgstr ""
+
+#: SundtekControlCenter.py:227
+msgid "Save setup"
+msgstr ""
+
+#: SundtekControlCenter.py:375
+msgid "Scan for IPTV server addresses"
+msgstr ""
+
+#: SundtekControlCenter.py:377
+msgid "Service Mode"
+msgstr ""
+
+#: SundtekControlCenter.py:643
+msgid ""
+"Service Mode starts a tunnel to the sundtek server. Please start service "
+"mode only if requested by sundtek support.\n"
+"\n"
+"Start Service Mode now?"
+msgstr ""
+
+#: SundtekControlCenter.py:384
+msgid "Show /etc/sundtek.conf"
+msgstr ""
+
+#: SundtekControlCenter.py:378
+msgid "Show tuner informations"
+msgstr ""
+
+#: SundtekControlCenter.py:913 SundtekControlCenter.py:941
+msgid ""
+"Sorry, only one or no stick ID was found.\n"
+"\n"
+"Please check that all sticks are plugged correctly. The config file was "
+"written without stick information."
+msgstr ""
+
+#: SundtekControlCenter.py:95 SundtekControlCenter.py:220
+msgid "Sundtek"
+msgstr ""
+
+#: SundtekControlCenter.py:442 plugin.py:41
+msgid "Sundtek Control Center"
+msgstr ""
+
+#: SundtekControlCenter.py:732
+msgid ""
+"Sundtek legal notice:\n"
+"This software comes without any warranty, use it at your own risk?\n"
+"Continue?"
+msgstr ""
+
+#: SundtekControlCenter.py:520
+msgid ""
+"SundtekControlCenter successfully updated! You need to restart Enigma2. "
+"Restart now?"
+msgstr ""
+
+#: SundtekControlCenter.py:514
+msgid "The SundtekControlCenter is updated in background"
+msgstr ""
+
+#: SundtekControlCenter.py:588
+msgid "Use following address as media server?\n"
+msgstr ""
+
+#: SundtekControlCenter.py:594
+msgid "Use following addresses?\n"
+msgstr ""
+
+#: SundtekControlCenter.py:317
+msgid "driver update available"
+msgstr ""
+
+#: SundtekControlCenter.py:55
+msgid "ext menu"
+msgstr ""
+
+#: SundtekControlCenter.py:55
+msgid "ext/scan menu"
+msgstr ""
+
+#: SundtekControlCenter.py:63
+msgid "hide"
+msgstr ""
+
+#: plugin.py:48 plugin.py:49 plugin.py:52
+msgid "installs the sundtek driver and runs related shellscripts"
+msgstr ""
+
+#: SundtekControlCenter.py:552
+msgid "latest sundtek driver version:\n"
+msgstr ""
+
+#: SundtekControlCenter.py:68
+msgid "max"
+msgstr ""
+
+#: SundtekControlCenter.py:68
+msgid "min"
+msgstr ""
+
+#: SundtekControlCenter.py:55
+msgid "nowhere"
+msgstr ""
+
+#: SundtekControlCenter.py:68 SundtekControlCenter.py:69
+#: SundtekControlCenter.py:70
+msgid "off"
+msgstr ""
+
+#: SundtekControlCenter.py:69 SundtekControlCenter.py:70
+msgid "on"
+msgstr ""
+
+#: SundtekControlCenter.py:55
+msgid "scan menu"
+msgstr ""
+
+#: SundtekControlCenter.py:287 SundtekControlCenter.py:289
+msgid "scc update available"
+msgstr ""
+
+#: SundtekControlCenter.py:63
+msgid "show"
+msgstr ""
+
+#: plugin.py:48 plugin.py:49 plugin.py:52
+msgid "sundtek control center plugin"
+msgstr ""
+
+#: SundtekControlCenter.py:73 SundtekControlCenter.py:77
+#: SundtekControlCenter.py:81
+msgid "via Network"
+msgstr ""
+
+#: SundtekControlCenter.py:73 SundtekControlCenter.py:77
+#: SundtekControlCenter.py:81
+msgid "via USB"
+msgstr ""
+
+#: SundtekControlCenter.py:478
+msgid "www.sundtek.de unavailable"
+msgstr ""
