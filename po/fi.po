@@ -1,0 +1,442 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Sundtek Control Center\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-31 21:46+0300\n"
+"PO-Revision-Date: 2016-08-18 17:16+0200\n"
+"Last-Translator: Samzam <http://www.world-of-satellite.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: SundtekControlCenter.py:552
+msgid ""
+"\n"
+"Update to current sundtek driver version?"
+msgstr ""
+"\n"
+"Päivitä nykyinen Sundtek ajuri?"
+
+#: SundtekControlCenter.py:552
+msgid ""
+"\n"
+"your driver version:\n"
+msgstr ""
+"\n"
+"Nykyinen ajuriversio:\n"
+
+#: SundtekControlCenter.py:420 SundtekControlCenter.py:431
+msgid "          Network IP"
+msgstr "          Verkko IP"
+
+#: SundtekControlCenter.py:398
+msgid "      Autostart"
+msgstr "      Automaattinen käynnistys"
+
+#: SundtekControlCenter.py:415
+msgid "      DVB Transmission Way, Stick 2"
+msgstr "      DVB lähetystapa, tikku 2"
+
+#: SundtekControlCenter.py:427
+msgid "      DVB Transmission Way, Stick 3"
+msgstr "      DVB lähetystapa, tikku 3"
+
+#: SundtekControlCenter.py:399
+msgid "      Driver autoupdate"
+msgstr "      Ajurin automaattipäivitys"
+
+#: SundtekControlCenter.py:400
+msgid "      Loglevel"
+msgstr "      Lokitila"
+
+#: SundtekControlCenter.py:410
+msgid "      Network IP"
+msgstr "      Verkko IP"
+
+#: SundtekControlCenter.py:401
+msgid "      Networkmode"
+msgstr "      Verkkotila"
+
+#: SundtekControlCenter.py:402
+msgid "      dmhwpidfilter"
+msgstr "      dmhwpid-suodatus"
+
+#: SundtekControlCenter.py:403
+msgid "      vTuner acceleration for DM800"
+msgstr "      vTuner kiihdytys DM800:lle"
+
+#: SundtekControlCenter.py:416 SundtekControlCenter.py:428
+msgid "*     USB/Network"
+msgstr "*     USB/Verkko"
+
+#: SundtekControlCenter.py:395
+msgid "* Configuration support"
+msgstr "* Lisäasetukset"
+
+#: SundtekControlCenter.py:407
+msgid "* USB/Network"
+msgstr "* USB/Verkko"
+
+#: SundtekControlCenter.py:413
+msgid "* Use Second Stick"
+msgstr "* Käytä toista tikku"
+
+#: SundtekControlCenter.py:425
+msgid "* Use Third Stick"
+msgstr "* Käytä kolmatta tikkua"
+
+#: SundtekControlCenter.py:510
+msgid ""
+"A newer version of the sundtekcontrolcenter plugin is available. Install now?"
+msgstr ""
+"Uusi versio Sundtek Control Centeristä on saatavilla. Asennetaanko nyt?"
+
+#: SundtekControlCenter.py:437
+msgid "Add show plugin"
+msgstr "Näytä plugin"
+
+#: SundtekControlCenter.py:436
+msgid "Auto checking new version driver/plugin"
+msgstr "Automaattinen päivitystarkistus"
+
+#: SundtekControlCenter.py:379
+msgid "Backup Drivers to HDD"
+msgstr "Varmuuskopioi ajurit kiintolevylle"
+
+#: SundtekControlCenter.py:233
+msgid "Bouquet + = install or update driver"
+msgstr "Kanavanvaihto + = asenna/päivitä ajuri"
+
+#: SundtekControlCenter.py:234
+msgid "Bouquet - = scan for IPTV server addresses"
+msgstr "Kanavanvaihto - = Etsi IPTV palvelinosoitteita"
+
+#: SundtekControlCenter.py:531
+msgid "Build date :"
+msgstr "Version päiväys:"
+
+#: SundtekControlCenter.py:381
+msgid "Check for a newer version of the SundtekControlCenter"
+msgstr "Tarkista päivitykset Sundtek Control Centeriin"
+
+#: SundtekControlCenter.py:497
+msgid ""
+"Check not possible. Please ensure that the Box is connected to the internet."
+msgstr "Tarkistus epäonnistui. Varmista internetyhteyden toimivuus."
+
+#: SundtekControlCenter.py:406
+msgid "DVB Transmission Way"
+msgstr "DVB lähetystapa"
+
+#: SundtekControlCenter.py:95 SundtekControlCenter.py:220
+msgid "DVB-"
+msgstr "DVB-"
+
+#: SundtekControlCenter.py:102 SundtekControlCenter.py:130
+#: SundtekControlCenter.py:134
+msgid "DVB-C"
+msgstr "DVB-C"
+
+#: SundtekControlCenter.py:102 SundtekControlCenter.py:130
+#: SundtekControlCenter.py:134
+msgid "DVB-T2"
+msgstr "DVB-T2"
+
+#: SundtekControlCenter.py:627
+msgid "Disable the IP server"
+msgstr "Estä IP-palvelin"
+
+#: SundtekControlCenter.py:376
+msgid "Enable / Disable IP server"
+msgstr "Salli / Estä IP-palvelin"
+
+#: SundtekControlCenter.py:626
+msgid "Enable the IP server"
+msgstr "Salli IP-palvelin"
+
+#: SundtekControlCenter.py:226
+msgid "Exit"
+msgstr "Poistu"
+
+#: SundtekControlCenter.py:637
+msgid "IP server is disabled"
+msgstr "IP-palvelin estetty"
+
+#: SundtekControlCenter.py:633
+msgid "IP server is enabled"
+msgstr "IP-palvelin sallittu"
+
+#: SundtekControlCenter.py:232
+msgid "Info = show tuner informations"
+msgstr "Info = Näytä viritintiedot"
+
+#: SundtekControlCenter.py:374
+msgid "Install or Update sundtek Driver"
+msgstr "Asenna tai päivitä Sundtek ajuri"
+
+#: SundtekControlCenter.py:966
+msgid ""
+"It seems the sundtek driver is not installed or not installed properly. "
+"Install the driver now?"
+msgstr "Sundtek ajuria ei ole asennettu. Asenna ajuri nyt?"
+
+#: SundtekControlCenter.py:495 SundtekControlCenter.py:506
+msgid "Latest version is already installed"
+msgstr "Uusin versio on jo asennettu"
+
+#: SundtekControlCenter.py:231
+msgid "Menu = call further functions..."
+msgstr "Menu = Lisää toimintoja..."
+
+#: SundtekControlCenter.py:596
+msgid "No IPTV media server found"
+msgstr "Ei löytynyt IPTV mediapalvelinta"
+
+#: SundtekControlCenter.py:686
+msgid "No backup file was found."
+msgstr "Varmuuskopiotiedostoa ei löytynyt"
+
+#: SundtekControlCenter.py:688
+msgid "No backups found."
+msgstr "Varmuuskopioita ei löytynyt"
+
+#: SundtekControlCenter.py:254
+msgid "No stick found"
+msgstr "Tikkua ei löydy"
+
+#: SundtekControlCenter.py:664
+msgid "Not found folder '/media/hdd'."
+msgstr "/media/hdd kansiota ei löydy"
+
+#: SundtekControlCenter.py:485
+msgid "Not found network connection"
+msgstr "Ei löydy verkkoyhteyttä"
+
+#: SundtekControlCenter.py:230
+msgid "OK/ green = activate settings"
+msgstr "OK/Vihreä = Aktivoi asetukset"
+
+#: SundtekControlCenter.py:343
+msgid "Please enter IP:"
+msgstr "Syötä IP-osoite:"
+
+#: SundtekControlCenter.py:706
+msgid "Reboot box"
+msgstr "Käynnistä laite"
+
+#: SundtekControlCenter.py:228
+msgid "Restart"
+msgstr "Käynnistä laite"
+
+#: SundtekControlCenter.py:705
+msgid "Restart E2"
+msgstr "Käynnistä E2"
+
+#: SundtekControlCenter.py:380
+msgid "Restore Drivers from HDD"
+msgstr "Palauta ajurit kiintolevyltä"
+
+#: SundtekControlCenter.py:696
+msgid "Restore was canceled"
+msgstr "Palautus peruttu"
+
+#: SundtekControlCenter.py:694
+#, python-format
+msgid "Restoreing:  %s"
+msgstr "Palautetaan:  %s"
+
+#: SundtekControlCenter.py:229
+msgid "Save and start tuner"
+msgstr "Tallenna ja käynnistä viritin"
+
+#: SundtekControlCenter.py:227
+msgid "Save setup"
+msgstr "Tallenna asetukset"
+
+#: SundtekControlCenter.py:375
+msgid "Scan for IPTV server addresses"
+msgstr "Etsi IPTV palvelin osoitteita"
+
+#: SundtekControlCenter.py:377
+msgid "Service Mode"
+msgstr "Tukitila"
+
+#: SundtekControlCenter.py:643
+msgid ""
+"Service Mode starts a tunnel to the sundtek server. Please start service "
+"mode only if requested by sundtek support.\n"
+"\n"
+"Start Service Mode now?"
+msgstr ""
+"Tukitila avaa reitin Sundtek palvelimelle etätukea varten. Avaa vain Sundtek "
+"tuen pyynnöstä.\n"
+"\n"
+"Käynnistä tukitila nyt?"
+
+#: SundtekControlCenter.py:384
+msgid "Show /etc/sundtek.conf"
+msgstr "Näytä /etc/sundtek.conf"
+
+#: SundtekControlCenter.py:378
+msgid "Show tuner informations"
+msgstr "Näytä viritintiedot"
+
+#: SundtekControlCenter.py:913 SundtekControlCenter.py:941
+msgid ""
+"Sorry, only one or no stick ID was found.\n"
+"\n"
+"Please check that all sticks are plugged correctly. The config file was "
+"written without stick information."
+msgstr ""
+"Vain yksi tai ei yhtään tikkua löydetty.\n"
+"\n"
+"Tarkista että tikut on kytketty kunnolla. Asetustiedosto kirjoitettiin ilman "
+"tikkutietoja."
+
+#: SundtekControlCenter.py:95 SundtekControlCenter.py:220
+msgid "Sundtek"
+msgstr "Sundtek"
+
+#: SundtekControlCenter.py:442 plugin.py:41
+msgid "Sundtek Control Center"
+msgstr "Sundtek Control Center"
+
+#: SundtekControlCenter.py:732
+msgid ""
+"Sundtek legal notice:\n"
+"This software comes without any warranty, use it at your own risk?\n"
+"Continue?"
+msgstr ""
+"Sundtek vastuuvapautus:\n"
+"Käytät tätä ohjelmaa omalla vastuulla?\n"
+"Jatka?"
+
+#: SundtekControlCenter.py:520
+msgid ""
+"SundtekControlCenter successfully updated! You need to restart Enigma2. "
+"Restart now?"
+msgstr ""
+"SundtekControlCenter päivitetty! Tarvitaan E2 uudelleenkäynnistys. Käynnistä "
+"nyt?"
+
+#: SundtekControlCenter.py:514
+msgid "The SundtekControlCenter is updated in background"
+msgstr "SundtekControlCenter on päivitetty taustalla"
+
+#: SundtekControlCenter.py:588
+msgid "Use following address as media server?\n"
+msgstr "Käytä seuraavaa mediapalvelinosoitetta?\n"
+
+#: SundtekControlCenter.py:594
+msgid "Use following addresses?\n"
+msgstr "Käytä seuraavia osoitteita?\n"
+
+#: SundtekControlCenter.py:317
+msgid "driver update available"
+msgstr "Ajuripäivitys saatavilla"
+
+#: SundtekControlCenter.py:55
+msgid "ext menu"
+msgstr "Laajennusvalikko"
+
+#: SundtekControlCenter.py:55
+msgid "ext/scan menu"
+msgstr "Laajennus/hakuvalikko"
+
+#: SundtekControlCenter.py:63
+msgid "hide"
+msgstr "Piilotettu"
+
+#: plugin.py:48 plugin.py:49 plugin.py:52
+msgid "installs the sundtek driver and runs related shellscripts"
+msgstr "Asentaa Sundtek ajurit ja suorittaa skriptit"
+
+#: SundtekControlCenter.py:552
+msgid "latest sundtek driver version:\n"
+msgstr "Viimeisin Sundtek ajuriversio:\n"
+
+#: SundtekControlCenter.py:68
+msgid "max"
+msgstr "Maksimi"
+
+#: SundtekControlCenter.py:68
+msgid "min"
+msgstr "Minimi"
+
+#: SundtekControlCenter.py:55
+msgid "nowhere"
+msgstr "Ei missään"
+
+#: SundtekControlCenter.py:68 SundtekControlCenter.py:69
+#: SundtekControlCenter.py:70
+msgid "off"
+msgstr "Pois"
+
+#: SundtekControlCenter.py:69 SundtekControlCenter.py:70
+msgid "on"
+msgstr "Päällä"
+
+#: SundtekControlCenter.py:55
+msgid "scan menu"
+msgstr "Hakuvalikko"
+
+#: SundtekControlCenter.py:287 SundtekControlCenter.py:289
+msgid "scc update available"
+msgstr "SCC päivitys saatavilla"
+
+#: SundtekControlCenter.py:63
+msgid "show"
+msgstr "Näkyvissä"
+
+#: plugin.py:48 plugin.py:49 plugin.py:52
+msgid "sundtek control center plugin"
+msgstr "Sundtek Control Center plugin"
+
+#: SundtekControlCenter.py:73 SundtekControlCenter.py:77
+#: SundtekControlCenter.py:81
+msgid "via Network"
+msgstr "Verkon kautta"
+
+#: SundtekControlCenter.py:73 SundtekControlCenter.py:77
+#: SundtekControlCenter.py:81
+msgid "via USB"
+msgstr "USB:n kautta"
+
+#: SundtekControlCenter.py:478
+msgid "www.sundtek.de unavailable"
+msgstr "Ei yhteyttä www.sundtek.de sivustolle"
+
+#: SundtekControlCenter.py:
+msgid "      Enable TV Server"
+msgstr "      TV palvelin"
+
+#: SundtekControlCenter.py:
+msgid "      Hardware PID Filter"
+msgstr "      Järjestelmän PID suodatus"
+
+#: SundtekControlCenter.py:
+msgid "Enable Tuner %d"
+msgstr "Ota käyttöön viritin %d"
+
+#: SundtekControlCenter.py:
+msgid "Scan and connect to a TV Server"
+msgstr "Etsi ja yhdistä TV palvelimeen"
+
+#: SundtekControlCenter.py:
+msgid "Connect to TV Server IP"
+msgstr "Yhdistä TV palvelimeen IP-osoitteessa"
+
+#: SundtekControlCenter.py:
+msgid "* Device"
+msgstr "* Laite"
+
+#: SundtekControlCenter.py:
+msgid "* DVB Mode"
+msgstr "* DVB tila"
