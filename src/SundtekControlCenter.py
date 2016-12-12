@@ -99,7 +99,7 @@ config.plugins.SundtekControlCenter.sunconf.networkmode = ConfigSelection(defaul
 
 ## version string #########################################################
 
-sundtekcontrolcenter_version = "20160830-1"
+sundtekcontrolcenter_version = "20161213-2"
 testOK = None
 
 ###########################################################################
