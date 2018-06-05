@@ -62,7 +62,10 @@ device_choices_blacklist=[]
 config.plugins.SundtekControlCenter = ConfigSubsection()
 
 vtuner_interfaces=[]
-for dirname, dirnames, filenames in os.walk("/dev/misc/"):
+vtuner_dir = "/dev/misc/"
+if not os.path.isdir(vtuner_dir):
+   vtuner_dir = "/dev/"
+for dirname, dirnames, filenames in os.walk(vtuner_dir):
    for filename in filenames:
       if (len(filename) >= 7) and (filename[0:6] == "vtuner"):
          vtuner_interfaces.append(filename)
@@ -99,7 +102,7 @@ config.plugins.SundtekControlCenter.sunconf.networkmode = ConfigSelection(defaul
 
 ## version string #########################################################
 
-sundtekcontrolcenter_version = "20161213-2"
+sundtekcontrolcenter_version = "20180605-2"
 testOK = None
 
 ###########################################################################
