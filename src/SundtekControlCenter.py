@@ -102,7 +102,7 @@ config.plugins.SundtekControlCenter.sunconf.networkmode = ConfigSelection(defaul
 
 ## version string #########################################################
 
-sundtekcontrolcenter_version = "20180605-2"
+sundtekcontrolcenter_version = "20200915-2"
 testOK = None
 
 ###########################################################################
@@ -461,6 +461,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                   if i[0:8] == "devices_": 
                        if cur[1]==config.plugins.SundtekControlCenter.__dict__[i]:
                             config.plugins.SundtekControlCenter.__dict__[i].value="%d" % rv[1]
+
     def save2(self):
             for x in self["config"].list:
                   x[1].save()
@@ -468,7 +469,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             self.sundtekconfigfile()
             self.readConfig()
             self.updateDefaults()
-            if self.setsettings(True):
+            if self.setsettings(exit=True):
                   self.close(True, self.session)
 
     def save(self):
@@ -507,7 +508,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                     else:
                       self.session.open(MessageBox, _("%s is already connected") % config.plugins.SundtekControlCenter.networkIp.value, MessageBox.TYPE_INFO, 7)
                     return
-                    
+
               if cur[1] == config.plugins.SundtekControlCenter.scanNetwork:
                     self.scannetwork()
                     return
@@ -532,20 +533,39 @@ class SundtekControlCenter(Screen, ConfigListScreen):
         ]
         if os.path.exists("/etc/sundtek.conf"):
             options.append((_("Show /etc/sundtek.conf"), self.configinfo))
+        currentfile = "/usr/script/DVB_C_Tuner_starten.sh"
+        if os.path.exists(currentfile):
+            fix_vtuner = False
+            try:
+                f = open(currentfile).readlines()
+                for line in f:
+                    if "[ ! -e /tmp/.sundtekholdstart ] && touch /tmp/.sundtekholdstart && sleep 5 && /usr/sundtek/sun_dvb.sh start_c" in line:
+                        fix_vtuner = True
+            except:
+                fix_vtuner = None
+            if fix_vtuner:
+                options.append((_("Disable tuners type fix"), self.resetfixtunerstype))
+            elif fix_vtuner is not None:
+                options.append((_("Enable tuners type fix"), self.setfixtunerstype))
         self.session.openWithCallback(self.thismenuCallback, ChoiceBox, list = options)
 
     def configinfo(self):
-                self.prompt("cat /etc/sundtek.conf")
+        self.prompt("cat /etc/sundtek.conf")
 
     def thismenuCallback(self,ret):
         ret and ret[1]()
 
+    def setfixtunerstype(self):
+        os.system("echo '[ ! -e /tmp/.sundtekholdstart ] && touch /tmp/.sundtekholdstart && sleep 5 && /usr/sundtek/sun_dvb.sh start_c' >> /usr/script/DVB_C_Tuner_starten.sh")
+
+    def resetfixtunerstype(self):
+        os.system("echo '#!/bin/sh\nsource /usr/script/DriverCheck.sh\n/usr/sundtek/sun_dvb.sh start_c restart $0\n' > /usr/script/DVB_C_Tuner_starten.sh")
 
     def updateDeviceList(self):
         global sundtek_devices, vtuner_nifs
         global device_choices, device_choices_whitelist
         if os.path.exists("/opt/bin/mediaclient"):
-           devices = os.popen("/opt/bin/mediaclient -e").read()                                                  
+           devices = os.popen("/opt/bin/mediaclient -e").read()
         else:
            return
 
@@ -562,44 +582,44 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 b = 0
                 network_path=""
                 s = r"\[NETWORKPATH\]:\n.+PATH: (.*)"
-                pattern = re.compile(s)                                                                               
-                serial_result = {}                                                                                    
-                while True:                                                                                           
-                    match = pattern.search(network[i], b)                                                                
-                    if match:                                                                                         
-                        network_path = (match.group(1))                                                           
-                        b = match.end() + 1                                                                           
-                    else:                                                                                             
+                pattern = re.compile(s)
+                serial_result = {}
+                while True:
+                    match = pattern.search(network[i], b)
+                    if match:
+                        network_path = (match.group(1))
+                        b = match.end() + 1
+                    else:
                         break
                 networkpath_result[i]=network_path
             
-        i = 0                                                                                                 
-        d = 0                                                                                                 
+        i = 0
+        d = 0
 
-        s = r"\[SERIAL\]:\n.+ID: (\w+)"                                                                       
-        pattern = re.compile(s)                                                                               
-        serial_result = {}                                                                                    
-        while True:                                                                                           
-            match = pattern.search(devices, i)                                                                
-            if match:                                                                                         
-                serial_result[d] = (match.group(1))                                                           
-                i = match.end() + 1                                                                           
-                d = d + 1                                                                                     
-            else:                                                                                             
-                break                                                                                         
-                                                                                                              
-        s = r"device \d{1,}: \[(.*)\]"                                                                        
-        pattern = re.compile(s)                                                                               
-        i = 0                                                                                                 
-        d = 0                                                                                                 
-        device_result = {}                                                                                    
-        while True:                                                                                           
-            match = pattern.search(devices, i)                                                                
-            if match:                                                                                         
-                device_result[d] = (match.group(1))                                                           
-                i = match.end()+1                                                                             
-                d = d+1                                                                                       
-            else:                                                                                             
+        s = r"\[SERIAL\]:\n.+ID: (\w+)"
+        pattern = re.compile(s)
+        serial_result = {}
+        while True:
+            match = pattern.search(devices, i)
+            if match:
+                serial_result[d] = (match.group(1))
+                i = match.end() + 1
+                d = d + 1
+            else:
+                break
+
+        s = r"device \d{1,}: \[(.*)\]"
+        pattern = re.compile(s)
+        i = 0
+        d = 0
+        device_result = {}
+        while True:
+            match = pattern.search(devices, i)
+            if match:
+                device_result[d] = (match.group(1))
+                i = match.end()+1
+                d = d+1
+            else:
                 break
 
         s = r"device \d{1,}: (.*)"
@@ -1148,7 +1168,10 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                    
                dvbtransmission = str(config.plugins.SundtekControlCenter.__dict__["dvbtransmission1_%d" % i].value)
                print dvbtransmission
-               mode = int(config.plugins.SundtekControlCenter.__dict__['dvbtransmission1_%d' % i].value)
+               try:
+                   mode = int(config.plugins.SundtekControlCenter.__dict__['dvbtransmission1_%d' % i].value)
+               except:
+                   continue
                print mode
 
                mode=str(sundtek_devices[deviceid]['capabilities'][mode][1])
@@ -1165,7 +1188,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
 ####################################################################
 
 #### settings 
-    def setsettings(self, exit=False):
+    def setsettings(self, exit=False, use_os=False):
         ### check if driver is installed
         if ((not os.path.exists("/opt/bin/mediasrv")) or (not os.path.exists("/opt/bin/mediaclient")) or (not os.path.exists("/usr/sundtek/sun_dvb.sh"))):
             ## maybe driver not installed
@@ -1186,13 +1209,21 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             ### driver installed
             ### disable autostart
             if config.plugins.SundtekControlCenter.sunconf.autostart.value == False:
-                self.prompt("/usr/sundtek/sun_dvb.sh noautostart")
+                cmd = "/usr/sundtek/sun_dvb.sh noautostart"
+                if use_os:
+                    os.system(cmd)
+                else:
+                    self.prompt(cmd)
             else:
                 # as soon as the configuration file is written the driver will make use of the configuration file
                 # and ignore the command line configuration 
                 if config.plugins.SundtekControlCenter.sunconf.autostart.value == True:
                    ### enable autostart
-                   self.prompt("/usr/sundtek/sun_dvb.sh autostart_c")
+                   cmd = "/usr/sundtek/sun_dvb.sh autostart_c"
+                   if use_os:
+                       os.system(cmd)
+                   else:
+                       self.prompt(cmd)
         return True
 
     def tunerstart(self):
@@ -1200,7 +1231,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             x[1].save()
         configfile.save()
         self.sundtekconfigfile()
-        self.setsettings()
+        self.setsettings(use_os=True)
         if self.session.nav.getRecordings():
             self.session.open(MessageBox, _("Warning! Recording is currently running."), MessageBox.TYPE_INFO)
             return
@@ -1213,4 +1244,4 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 epgcache.save()
             except:
                 pass
-            self.prompt("sleep 8 && /usr/sundtek/sun_dvb.sh start_c")
+            self.prompt("echo 'Wait...' && sleep 8 && /usr/sundtek/sun_dvb.sh start_c restart")
