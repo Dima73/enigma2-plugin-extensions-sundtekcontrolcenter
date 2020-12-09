@@ -26,22 +26,16 @@
 from Components.ActionMap import ActionMap
 from Components.config import config, getConfigListEntry, ConfigNothing, ConfigSubsection, ConfigInteger, ConfigYesNo, ConfigText, ConfigSelection, configfile
 from Components.ConfigList import ConfigListScreen
-from Components.Input import Input
 from Components.Label import Label
-from Components.MenuList import MenuList
-from Components.MultiContent import MultiContentEntryText
 from Components.NimManager import nimmanager
-from Components.Sources.StaticText import StaticText
-from enigma import eConsoleAppContainer, getEnigmaVersionString, getDesktop
+from enigma import eConsoleAppContainer, getDesktop
 from Plugins.Plugin import PluginDescriptor
 from Screens.ChoiceBox import ChoiceBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Screens.Console import Console
-from Screens.InputBox import InputBox
 from Screens.Screen import Screen
 from Screens.Standby import TryQuitMainloop
 from Screens.MessageBox import MessageBox
-from Tools.NumericalTextInput import NumericalTextInput
 import os, re, time, datetime
 import urllib
 import array, struct, fcntl
@@ -123,7 +117,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 imageone="/usr/lib/enigma2/python/Plugins/Extensions/SundtekControlCenter/images/sundtek_dvbc.png"
             else:
                 imageone="/usr/lib/enigma2/python/Plugins/Extensions/SundtekControlCenter/images/sundtek_dvbs.png"
-            skin = "<screen title=\"SundtekControlCenter\" position=\"center,100\" size=\"750,550\" name=\"SundtekControlCenter\">\
+            skin = "<screen title=\"SundtekControlCenter\" position=\"center,center\" size=\"750,550\" name=\"SundtekControlCenter\">\
                     <ePixmap pixmap=\"/usr/lib/enigma2/python/Plugins/Extensions/SundtekControlCenter/images/bg.png\" position=\"0,0\" size=\"750,124\" alphatest=\"on\"/>\
                     <ePixmap pixmap=\"skin_default/buttons/red.png\" position=\"75,385\" size=\"140,40\" alphatest=\"on\" />\
                     <ePixmap pixmap=\"skin_default/buttons/green.png\" position=\"225,385\" size=\"140,40\" alphatest=\"on\" />\
@@ -155,7 +149,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 imagetwo="/usr/lib/enigma2/python/Plugins/Extensions/SundtekControlCenter/images/sundtek_dvbc.png"
             else:
                 imagetwo="/usr/lib/enigma2/python/Plugins/Extensions/SundtekControlCenter/images/sundtek_dvbs.png"
-            skin = "<screen title=\"SundtekControlCenter\" position=\"center,100\" size=\"750,550\" name=\"SundtekControlCenter\">\
+            skin = "<screen title=\"SundtekControlCenter\" position=\"center,center\" size=\"750,550\" name=\"SundtekControlCenter\">\
                     <ePixmap pixmap=\"/usr/lib/enigma2/python/Plugins/Extensions/SundtekControlCenter/images/bg.png\" position=\"0,0\" size=\"750,124\" alphatest=\"on\"/>\
                     <ePixmap pixmap=\"skin_default/buttons/red.png\" position=\"75,385\" size=\"140,40\" alphatest=\"on\" />\
                     <ePixmap pixmap=\"skin_default/buttons/green.png\" position=\"225,385\" size=\"140,40\" alphatest=\"on\" />\
@@ -182,7 +176,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 </screen>"
         else:
             skin = """
-                <screen title="SundtekControlCenter" position="100,100" size="750,550" name="SundtekControlCenter">
+                <screen title="SundtekControlCenter" position="center,center" size="750,550" name="SundtekControlCenter">
                     <ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/SundtekControlCenter/images/bg.png" position="0,0" size="750,124" alphatest="on"/>
                     <ePixmap pixmap="skin_default/buttons/red.png" position="75,385" size="140,40" alphatest="on" />
                     <ePixmap pixmap="skin_default/buttons/green.png" position="225,385" size="140,40" alphatest="on" />
