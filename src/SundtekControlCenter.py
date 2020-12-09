@@ -1077,6 +1077,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             sticks = []
 
         return sticks
+
     def sundtekconfigfile(self):
         global vtuner_nifs,sundtek_devices
         if (len(sundtek_devices) == 0):
@@ -1170,15 +1171,17 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                print dvbtransmission
                try:
                    mode = int(config.plugins.SundtekControlCenter.__dict__['dvbtransmission1_%d' % i].value)
+                   mode = str(sundtek_devices[deviceid]['capabilities'][mode][1])
+                   mode = mode.replace("-","")
                except:
-                   continue
+                   mode = ""
                print mode
+               if mode:
+                   tunerconf += "initial_dvb_mode="+mode+"\n"
+                   tunerconf += "dreambox_support_fe1=on\n\n"
+               else:
+                   tunerconf=""
 
-               mode=str(sundtek_devices[deviceid]['capabilities'][mode][1])
-               mode = mode.replace("-","")
-               tunerconf += "initial_dvb_mode="+mode+"\n"
-               tunerconf += "dreambox_support_fe1=on\n\n"
-                
         data = header+loglevel+autoupdate+dmhwpidfilter+vtuneracceleration+networkmode+"\n"+netsection+tunerconf
         ### (over)write file
         f = open(conffile, "w")
