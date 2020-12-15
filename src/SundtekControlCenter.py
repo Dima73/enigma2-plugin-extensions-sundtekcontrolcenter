@@ -90,6 +90,12 @@ if not os.path.exists("/proc/stb/info/vumodel") and not os.path.exists("/proc/st
     config.plugins.SundtekControlCenter.sunconf.searchversion.value = False
     config.plugins.SundtekControlCenter.sunconf.searchversion.save()
     orginal_dmm = True
+try:
+    l = open('/proc/stb/info/vumodel', 'r')
+    vu = l.read().strip()
+    l.close()
+except:
+    vu = ''
 config.plugins.SundtekControlCenter.sunconf.loglevel = ConfigSelection(default="0", choices = [("0", _("off")),("1", _("min")),("2", _("max"))])
 config.plugins.SundtekControlCenter.sunconf.dmhwpidfilter = ConfigSelection(default="1", choices = [("0", _("off")),("1", _("on"))])
 config.plugins.SundtekControlCenter.sunconf.networkmode = ConfigSelection(default="0", choices = [("0", _("off")),("1", _("on"))])
@@ -539,7 +545,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 fix_vtuner = None
             if fix_vtuner:
                 options.append((_("Disable tuners type fix"), self.resetfixtunerstype))
-            elif fix_vtuner is not None:
+            elif fix_vtuner is not None and vu == 'solo4k':
                 options.append((_("Enable tuners type fix"), self.setfixtunerstype))
         self.session.openWithCallback(self.thismenuCallback, ChoiceBox, list = options)
 
