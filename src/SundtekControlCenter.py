@@ -102,7 +102,7 @@ config.plugins.SundtekControlCenter.sunconf.networkmode = ConfigSelection(defaul
 
 ## version string #########################################################
 
-sundtekcontrolcenter_version = "20200915-2"
+sundtekcontrolcenter_version = "20210221-2"
 testOK = None
 
 ###########################################################################
@@ -245,6 +245,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                      # if it's not the network section proceed
                      if i[0:8] != "NETWORK]":
                         serial = i[0:i.find("]")]
+                        if "/1" in serial: continue
                         nr = i.find("netrecoverymode=on")
                         if (nr>0):
                           nr_enabled=True
@@ -663,7 +664,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             sundtek_devices[i]['network_path']=networkpath_result[i]
             sundtek_devices[i]['network_device']=net_result[i]
             sundtek_devices[i]['capabilities']=cap_result[i]
-            device_choices.append(('%d' % i, "%d %s" % (i,device_result[i][0:23])))
+            device_choices.append(('%d' % i, "%d %s" % (i+1,device_result[i][0:23])))
 
         device_choices_whitelist = device_choices
         for i in range(0, vtuner_nifs):
@@ -880,6 +881,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                         ### no info found 
                         sticks = []
                 return sticks
+
     def iptvServers(self, ret):
            found = 0
            if ret:
@@ -1154,7 +1156,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
         tunerconf=""
         devlist=[]
         for i in range(0,vtuner_nifs):
-          if config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i].value: 
+          if config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i].value:
               # quick protection which makes it impossible to register an input twice
             if (config.plugins.SundtekControlCenter.__dict__["devices_%d" % i].value != ""):
               deviceid = int(config.plugins.SundtekControlCenter.__dict__["devices_%d" % i].value)
@@ -1162,20 +1164,21 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                devlist.append(deviceid)
                tunerconf += "###### configuration stick %d\n" % i
 
-               serial = sundtek_devices[deviceid]['serial'];
+               serial = sundtek_devices[deviceid]['serial']
+               current_description = config.plugins.SundtekControlCenter.__dict__["devices_%d" % i].getText()
+               if current_description and _("Dual") in current_description:
+                   tunerconf += ("["+serial+"/1]\n")
+                   tunerconf += "dreambox_support_fe1=on\n\n"
                tunerconf += ("["+serial+"]\n")
                if len(sundtek_devices[deviceid]['network_path']):
                  tunerconf += "netrecoverymode=on\n"
-                   
                dvbtransmission = str(config.plugins.SundtekControlCenter.__dict__["dvbtransmission1_%d" % i].value)
-               print dvbtransmission
                try:
                    mode = int(config.plugins.SundtekControlCenter.__dict__['dvbtransmission1_%d' % i].value)
                    mode = str(sundtek_devices[deviceid]['capabilities'][mode][1])
                    mode = mode.replace("-","")
                except:
                    mode = ""
-               print mode
                if mode:
                    tunerconf += "initial_dvb_mode="+mode+"\n"
                    tunerconf += "dreambox_support_fe1=on\n\n"
