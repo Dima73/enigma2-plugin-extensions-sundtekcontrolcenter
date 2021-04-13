@@ -112,6 +112,7 @@ testOK = None
 
 ###########################################################################
 
+
 class SundtekControlCenter(Screen, ConfigListScreen):
     nims = nimmanager.nimList() # get nim_sockets
     result = []
@@ -233,6 +234,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                     <widget name="tunertwo" position="220,10" zPosition="1" size="215,68" font="Regular;16" halign="left" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
                     <ePixmap position="495, 410" size="100,40" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/SundtekControlCenter/plugin.png" transparent="1" alphatest="on" />
                 </screen>"""
+
     def readConfig(self):
         self.config_list = {}
         fh = None

@@ -29,6 +29,7 @@ import SundtekControlCenter
 
 ####################################################################
 
+
 def main(session, **kwargs):
     try:
         session.open(SundtekControlCenter.SundtekControlCenter)
@@ -36,10 +37,12 @@ def main(session, **kwargs):
         import traceback
         traceback.print_exc()
 
+
 def SundtekControlCenterStart(menuid):
     if (config.plugins.SundtekControlCenter.display.value == "2" or config.plugins.SundtekControlCenter.display.value == "3") and (menuid == "scan" or menuid == "services_recordings"):
         return [(_("Sundtek Control Center"), main, "sundtek_control_enter", 50)]
     return []
+
 
 def Plugins(path, **kwargs):
     global plugin_path
