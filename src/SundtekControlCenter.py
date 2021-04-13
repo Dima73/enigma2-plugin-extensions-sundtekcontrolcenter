@@ -250,7 +250,8 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                      # if it's not the network section proceed
                      if i[0:8] != "NETWORK]":
                         serial = i[0:i.find("]")]
-                        if "/1" in serial: continue
+                        if "/1" in serial:
+                           continue
                         nr = i.find("netrecoverymode=on")
                         if (nr>0):
                           nr_enabled=True
@@ -290,14 +291,14 @@ class SundtekControlCenter(Screen, ConfigListScreen):
         global vtuner_nifs, sundtek_devices, device_choices_whitelist
         if (len(self.config_list)>0):
           for i in range(0,vtuner_nifs):
-             config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i].value = False;
+             config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i].value = False
              for b in sundtek_devices:
                 if i in self.config_list.keys():
                   if (sundtek_devices[b]['serial'] == self.config_list[i]['serial']):
                     idx = b
                     config.plugins.SundtekControlCenter.__dict__["devices_%d" % i] = ConfigSelection(default='%d' % idx, choices = list(device_choices))
                     
-                    config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i].value = True;
+                    config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i].value = True
                     if 'initial_mode' in self.config_list[i].keys():
                         n=0
                         for c in sundtek_devices[b]['capabilities']:
@@ -750,12 +751,14 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 global testOK
                 link = "down"
                 for iface in self.get_iface_list():
-                        if "lo" in iface: continue
+                        if "lo" in iface:
+                           continue
                         if os.path.exists("/sys/class/net/%s/operstate"%(iface)):
                                 fd = open("/sys/class/net/%s/operstate"%(iface), "r")
                                 link = fd.read().strip()
                                 fd.close()
-                        if link != "down": break
+                        if link != "down":
+                           break
                 if link != "down":
                         s = socket(AF_INET, SOCK_STREAM)
                         s.settimeout(2.0)
@@ -775,7 +778,8 @@ class SundtekControlCenter(Screen, ConfigListScreen):
 
     #### scc update
     def selfupdate(self):
-                if not self.network: return
+                if not self.network:
+                   return
                 try: 
                         self.version = urllib.urlopen('http://sundtek.de/media/latest.phtml?sccv=1').read()
                         self.version = self.version.replace('sundtekcontrolcenter-', '')
@@ -827,7 +831,8 @@ class SundtekControlCenter(Screen, ConfigListScreen):
 
     #### check sundtek driverversion
     def checkdriverversion(self):
-                if not self.network: return
+                if not self.network:
+                   return
                 s = r"(?P<year>\d{2})(?P<month>\d{2})(?P<day>\d{2}).(?P<hours>\d{2})(?P<minutes>\d{2})(?P<seconds>\d{2})"
                 pattern = re.compile(s)
                 text = _("Build date :")
@@ -1154,7 +1159,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             if netsection == "" and len(sundtek_devices[i]['network_path'])>0:
                 netsection="[NETWORK]\n"
             if (len(sundtek_devices[i]['network_path'])>0):
-                netsection+="device="+sundtek_devices[i]['network_path']+"\n";
+                netsection+="device="+sundtek_devices[i]['network_path']+"\n"
         show_message = False
 
         #stick 1 data
@@ -1215,7 +1220,8 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             else:
                 ## driver not installed
                 self.session.openWithCallback(self.installdriverrequest, MessageBox, _("It seems the sundtek driver is not installed or not installed properly. Install the driver now?"), MessageBox.TYPE_YESNO)
-                if exit: return False
+                if exit:
+                   return False
         else:
             ### driver installed
             ### disable autostart
