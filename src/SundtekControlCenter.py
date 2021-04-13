@@ -36,9 +36,14 @@ from Screens.Console import Console
 from Screens.Screen import Screen
 from Screens.Standby import TryQuitMainloop
 from Screens.MessageBox import MessageBox
-import os, re, time, datetime
+import os
+import re
+import time
+import datetime
 import urllib
-import array, struct, fcntl
+import array
+import struct
+import fcntl
 from threading import Thread
 from socket import socket, AF_INET, SOCK_STREAM, SOCK_DGRAM, SHUT_RDWR
 SIOCGIFCONF = 0x8912
