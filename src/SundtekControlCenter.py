@@ -8,19 +8,19 @@
 #  - fixed device selection
 #  - updated networking support
 #
-#  This plugin is licensed under the Creative Commons 
+#  This plugin is licensed under the Creative Commons
 #  Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 #  To view a copy of this license, please visit
 #  http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative
 #  Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
 #
-#  Alternatively, this plugin may be distributed 
+#  Alternatively, this plugin may be distributed
 #  with devices from sundtek ltd. or sundtek germany.
 #
 #
 #  Sundtek Control Center Plugin is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
 
 from Components.ActionMap import ActionMap
@@ -57,7 +57,7 @@ from . import _
 device_choices = []
 device_choices_whitelist = []
 device_choices_blacklist = []
- 
+
 config.plugins.SundtekControlCenter = ConfigSubsection()
 
 vtuner_interfaces = []
@@ -197,7 +197,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                     <widget name="btt_red" position="75,385" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
                     <widget name="btt_green" position="225,385" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
                     <widget name="btt_yellow" position="375,385" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
-                    <widget name="btt_blue" position="525,385" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" /> 
+                    <widget name="btt_blue" position="525,385" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
                     <widget name="ok" position="25,430" zPosition="1" size="630,40" font="Regular;16" halign="left" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
                     <widget name="menu" position="25,450" zPosition="1" size="630,40" font="Regular;16" halign="left" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
                     <widget name="infos" position="25,470" zPosition="1" size="630,40" font="Regular;16" halign="left" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
@@ -220,7 +220,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                     <widget name="btt_red" position="10,320" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
                     <widget name="btt_green" position="160,320" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
                     <widget name="btt_yellow" position="310,320" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
-                    <widget name="btt_blue" position="460,320" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" /> 
+                    <widget name="btt_blue" position="460,320" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
                     <widget name="ok" position="25,370" zPosition="1" size="630,40" font="Regular;16" halign="left" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
                     <widget name="menu" position="25,390" zPosition="1" size="630,40" font="Regular;16" halign="left" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
                     <widget name="infos" position="25,410" zPosition="1" size="630,40" font="Regular;16" halign="left" valign="center" shadowColor="black" shadowOffset="-1,-1" transparent="1" />
@@ -299,7 +299,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                   if (sundtek_devices[b]['serial'] == self.config_list[i]['serial']):
                     idx = b
                     config.plugins.SundtekControlCenter.__dict__["devices_%d" % i] = ConfigSelection(default='%d' % idx, choices=list(device_choices))
-                    
+
                     config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i].value = True
                     if 'initial_mode' in self.config_list[i].keys():
                         n = 0
@@ -308,7 +308,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                               config.plugins.SundtekControlCenter.__dict__["dvbtransmission1_%d" % i] = ConfigSelection(default='%d' % n, choices=sundtek_devices[b]['capabilities'])
                               break
                            n = n + 1
-        
+
     def __init__(self, session, args=0):
         global sundtek_devices
         Screen.__init__(self, session)
@@ -359,11 +359,11 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                  tunertwo += "\n" + str(sundtek_devices[i]['device'][2:])
 
            self["tunertwo"] = Label(tunertwo)
-           
+
         else:
               self["tunerone"] = Label(_("No stick found"))
 
-        self["actions"] = ActionMap(["MenuActions", "OkCancelActions", "ChannelSelectBaseActions", "ColorActions", "ChannelSelectEPGActions"], 
+        self["actions"] = ActionMap(["MenuActions", "OkCancelActions", "ChannelSelectBaseActions", "ColorActions", "ChannelSelectEPGActions"],
         {
             "menu": self.menu,
             "ok": self.save,
@@ -381,8 +381,8 @@ class SundtekControlCenter(Screen, ConfigListScreen):
     ########################################################
 
     def afterNetworkTest(self, net=True):
-                ### search for sundtekcontrolcenter updates   
-                try: 
+                ### search for sundtekcontrolcenter updates
+                try:
                         version = urllib.urlopen('http://sundtek.de/media/latest.phtml?sccv=1').read()
                         version = version.replace('sundtekcontrolcenter-', '')
                 except:
@@ -467,7 +467,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             cur = self["config"].getCurrent()
             if cur and rv:
               for i in dir(config.plugins.SundtekControlCenter):
-                  if i[0:8] == "devices_": 
+                  if i[0:8] == "devices_":
                        if cur[1] == config.plugins.SundtekControlCenter.__dict__[i]:
                             config.plugins.SundtekControlCenter.__dict__[i].value = "%d" % rv[1]
 
@@ -485,7 +485,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             cur = self["config"].getCurrent()
             if cur:
               for i in dir(config.plugins.SundtekControlCenter):
-                  if i[0:8] == "devices_": 
+                  if i[0:8] == "devices_":
                        if cur[1] == config.plugins.SundtekControlCenter.__dict__[i]:
                               # no devices attached - so no device selection possible
                               if (cur[1].value == None) or (cur[1].value == ""):
@@ -538,7 +538,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             (_("Show tuner informations"), self.dvbinfo),
             (_("Backup Drivers to HDD"), self.driverbackup),
             (_("Restore Drivers from HDD"), self.driverrestore),
-            (_("Check for a newer version of the SundtekControlCenter"), self.selfupdate), 
+            (_("Check for a newer version of the SundtekControlCenter"), self.selfupdate),
         ]
         if os.path.exists("/etc/sundtek.conf"):
             options.append((_("Show /etc/sundtek.conf"), self.configinfo))
@@ -601,7 +601,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                     else:
                         break
                 networkpath_result[i] = network_path
-            
+
         i = 0
         d = 0
 
@@ -689,13 +689,13 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                config.plugins.SundtekControlCenter.__dict__["network_device_%d" % i] = ConfigYesNo(default=net_result[i])
             else:
                config.plugins.SundtekControlCenter.__dict__["network_device_%d" % i] = ConfigNothing()
- 
+
     def whitelist(self, item):
          global device_choices_whitelist, device_choices_blacklist, device_choices
          device_choices_whitelist.append(item)
          if item in device_choices_blacklist:
              device_choices_blacklist.remove(item)
-         
+
     def blacklist(self, item):
          global device_choices_whitelist, device_choices_blacklist
          device_choices_blacklist.append(item)
@@ -720,8 +720,8 @@ class SundtekControlCenter(Screen, ConfigListScreen):
         for i in range(0, vtuner_nifs):
           list.append(getConfigListEntry(_("Enable Tuner %d") % int(i + 1), config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i]))
           if config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i].value:
-            list.append(getConfigListEntry(_("* Device"), config.plugins.SundtekControlCenter.__dict__["devices_%d" % i])) 
-            list.append(getConfigListEntry(_("* DVB Mode"), config.plugins.SundtekControlCenter.__dict__["dvbtransmission1_%d" % i])) 
+            list.append(getConfigListEntry(_("* Device"), config.plugins.SundtekControlCenter.__dict__["devices_%d" % i]))
+            list.append(getConfigListEntry(_("* DVB Mode"), config.plugins.SundtekControlCenter.__dict__["dvbtransmission1_%d" % i]))
         list.append(getConfigListEntry(_("Scan and connect to a TV Server"), config.plugins.SundtekControlCenter.scanNetwork))
         list.append(getConfigListEntry(_("Connect to TV Server IP"), config.plugins.SundtekControlCenter.networkIp))
         if not orginal_dmm:
@@ -782,7 +782,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
     def selfupdate(self):
                 if not self.network:
                    return
-                try: 
+                try:
                         self.version = urllib.urlopen('http://sundtek.de/media/latest.phtml?sccv=1').read()
                         self.version = self.version.replace('sundtekcontrolcenter-', '')
                 except:
@@ -825,7 +825,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 self.container.execute("opkg install --force-overwrite " + "http://sundtek.de/media/enigma2-plugin-extensions-sundtekcontrolcenter_current_all.ipk")
 
     def finishedSelfUpdate(self, result):
-        self.session.openWithCallback(self.restartbox, MessageBox, _("SundtekControlCenter successfully updated! You need to restart Enigma2. Restart now?"), MessageBox.TYPE_YESNO) 
+        self.session.openWithCallback(self.restartbox, MessageBox, _("SundtekControlCenter successfully updated! You need to restart Enigma2. Restart now?"), MessageBox.TYPE_YESNO)
 
     def restartbox(self, result):
         if result:
@@ -839,9 +839,9 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 pattern = re.compile(s)
                 text = _("Build date :")
                 try:
-                        netdriver = urllib.urlopen('http://sundtek.de/media/latest.phtml?scc').read() 
+                        netdriver = urllib.urlopen('http://sundtek.de/media/latest.phtml?scc').read()
                 except:
-                        netdriver = text + "n/a" 
+                        netdriver = text + "n/a"
                 match = pattern.search(netdriver)
                 if match:
                         match = match.group("year") + " " + match.group("month") + " " + match.group("day") + " " + match.group("hours") + " " + match.group("minutes") + " " + match.group("seconds")
@@ -860,7 +860,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                         installeddriver = text + "n/a"
                 self.session.openWithCallback(self.disclaimer, MessageBox, _("latest sundtek driver version:\n") + netdriver + "\n" + _("\nyour driver version:\n") + installeddriver + _("\nUpdate to current sundtek driver version?"), MessageBox.TYPE_YESNO)
 
-    def disclaimer(self, result): 
+    def disclaimer(self, result):
         if result:
             os.popen("chmod 755 /usr/lib/enigma2/python/Plugins/Extensions/SundtekControlCenter/sundtekinstall.sh > /dev/null 2>&1")
             self.prompt("/usr/lib/enigma2/python/Plugins/Extensions/SundtekControlCenter/sundtekinstall.sh")
@@ -874,7 +874,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 sticks = []
                 if len(lines) == 6:
                         sticks = [0]
-                elif len(lines) >= 7: 
+                elif len(lines) >= 7:
                         sticks = [0, 0]
                 if len(sticks) == 1:
                         sticks[0] = lines[4].split("|")
@@ -890,7 +890,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                         except:
                                 pass
                 else:
-                        ### no info found 
+                        ### no info found
                         sticks = []
                 return sticks
 
@@ -970,7 +970,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                         return
                 self.session.openWithCallback(self.startservicemode, MessageBox, _("Service Mode starts a tunnel to the sundtek server. Please start service mode only if requested by sundtek support.\n\nStart Service Mode now?"), MessageBox.TYPE_YESNO)
 
-    def startservicemode(self, result): 
+    def startservicemode(self, result):
         if result:
             os.popen("/opt/bin/mediaclient --portforward 23")
             self.prompt("/opt/bin/mediaclient --portforward 23")
@@ -996,7 +996,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 backupfile = "sundtek-" + now.strftime("%Y%m%d-%H%M") + ".tar"
                 if (not os.path.exists(backuppath)): # backup folder does not yet exist
                         os.makedirs(backuppath)
-                self.prompt("tar -czvf" + " " + backuppath + "/" + backupfile + " /usr/sundtek /opt/bin /etc/sundtek.conf /etc/sundtek.net") 
+                self.prompt("tar -czvf" + " " + backuppath + "/" + backupfile + " /usr/sundtek /opt/bin /etc/sundtek.conf /etc/sundtek.net")
 
     #### restore
     def driverrestore(self):
@@ -1012,7 +1012,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 self.session.openWithCallback(self.restoremenuCallback, ChoiceBox, list=options)
             else: # es wurde kein backup file gefunden
                 self.session.open(MessageBox, _("No backup file was found."), MessageBox.TYPE_INFO, 10)
-        else: 
+        else:
             self.session.open(MessageBox, _("No backups found."), MessageBox.TYPE_INFO, 10)
 
     def restoremenuCallback(self, ret):
@@ -1087,7 +1087,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             sticks[0] = sticks[0][5].strip()
             sticks[1] = sticks[1][5].strip()
         else:
-            ### no info found 
+            ### no info found
             sticks = []
 
         return sticks
@@ -1205,7 +1205,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
 
 ####################################################################
 
-#### settings 
+#### settings
     def setsettings(self, exit=False, use_os=False):
         ### check if driver is installed
         if ((not os.path.exists("/opt/bin/mediasrv")) or (not os.path.exists("/opt/bin/mediaclient")) or (not os.path.exists("/usr/sundtek/sun_dvb.sh"))):
@@ -1235,7 +1235,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                     self.prompt(cmd)
             else:
                 # as soon as the configuration file is written the driver will make use of the configuration file
-                # and ignore the command line configuration 
+                # and ignore the command line configuration
                 if config.plugins.SundtekControlCenter.sunconf.autostart.value == True:
                    ### enable autostart
                    cmd = "/usr/sundtek/sun_dvb.sh autostart_c"

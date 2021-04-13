@@ -12,4 +12,3 @@ setup(name='enigma2-plugin-extensions-sundtekcontrolcenter',
 		description='control sundtek usb stick from enigma2',
 		cmdclass=setup_translate.cmdclass,
 	)
-
