@@ -46,7 +46,7 @@ def Plugins(path, **kwargs):
     plugin_path = path
     list = [
         PluginDescriptor(name=_("sundtek control center plugin"), description=_("installs the sundtek driver and runs related shellscripts"), where=PluginDescriptor.WHERE_MENU, fnc=SundtekControlCenterStart),
-        PluginDescriptor(name=_("sundtek control center plugin"), description=_("installs the sundtek driver and runs related shellscripts"), where=PluginDescriptor.WHERE_PLUGINMENU,icon="plugin.png", fnc=main)
+        PluginDescriptor(name=_("sundtek control center plugin"), description=_("installs the sundtek driver and runs related shellscripts"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="plugin.png", fnc=main)
         ]
     if config.plugins.SundtekControlCenter.display.value == "1" or config.plugins.SundtekControlCenter.display.value == "3":
         list.append(PluginDescriptor(name=_("sundtek control center plugin"), description=_("installs the sundtek driver and runs related shellscripts"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main))

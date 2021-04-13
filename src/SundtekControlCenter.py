@@ -75,16 +75,16 @@ sundtek_devices = {}
 
 # Enigma2 does not support arrays within the configuration class so we need to add members dynamically
 
-for i in range(0,vtuner_nifs):
+for i in range(0, vtuner_nifs):
   config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i] = ConfigYesNo(default=False)
   config.plugins.SundtekControlCenter.__dict__["devices_%d" % i] = ConfigNothing()
   config.plugins.SundtekControlCenter.__dict__["dvbtransmission1_%d" % i] = ConfigNothing()
 
-config.plugins.SundtekControlCenter.display = ConfigSelection(default="3", choices=[("0", _("nowhere")),("1", _("ext menu")),("2", _("scan menu")),("3", _("ext/scan menu"))])
+config.plugins.SundtekControlCenter.display = ConfigSelection(default="3", choices=[("0", _("nowhere")), ("1", _("ext menu")), ("2", _("scan menu")), ("3", _("ext/scan menu"))])
 config.plugins.SundtekControlCenter.scanNetwork = ConfigNothing()
 config.plugins.SundtekControlCenter.networkIp = ConfigText(default="0.0.0.0", visible_width=50, fixed_size=False)
 config.plugins.SundtekControlCenter.sunconf = ConfigSubsection()
-config.plugins.SundtekControlCenter.sunconf.support = ConfigSelection(default="0", choices=[("0", _("hide")),("1", _("show"))])
+config.plugins.SundtekControlCenter.sunconf.support = ConfigSelection(default="0", choices=[("0", _("hide")), ("1", _("show"))])
 config.plugins.SundtekControlCenter.sunconf.autostart = ConfigYesNo(default=False)
 config.plugins.SundtekControlCenter.sunconf.autoupdate = ConfigYesNo(default=False)
 config.plugins.SundtekControlCenter.sunconf.vtuneracceleration = ConfigYesNo(default=False)
@@ -101,9 +101,9 @@ try:
     l.close()
 except:
     vu = ''
-config.plugins.SundtekControlCenter.sunconf.loglevel = ConfigSelection(default="0", choices=[("0", _("off")),("1", _("min")),("2", _("max"))])
-config.plugins.SundtekControlCenter.sunconf.dmhwpidfilter = ConfigSelection(default="1", choices=[("0", _("off")),("1", _("on"))])
-config.plugins.SundtekControlCenter.sunconf.networkmode = ConfigSelection(default="0", choices=[("0", _("off")),("1", _("on"))])
+config.plugins.SundtekControlCenter.sunconf.loglevel = ConfigSelection(default="0", choices=[("0", _("off")), ("1", _("min")), ("2", _("max"))])
+config.plugins.SundtekControlCenter.sunconf.dmhwpidfilter = ConfigSelection(default="1", choices=[("0", _("off")), ("1", _("on"))])
+config.plugins.SundtekControlCenter.sunconf.networkmode = ConfigSelection(default="0", choices=[("0", _("off")), ("1", _("on"))])
 
 ## version string #########################################################
 
@@ -290,7 +290,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
     def updateDefaults(self):
         global vtuner_nifs, sundtek_devices, device_choices_whitelist
         if (len(self.config_list) > 0):
-          for i in range(0,vtuner_nifs):
+          for i in range(0, vtuner_nifs):
              config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i].value = False
              for b in sundtek_devices:
                 if i in self.config_list.keys():
@@ -361,7 +361,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
         else:
               self["tunerone"] = Label(_("No stick found"))
 
-        self["actions"] = ActionMap(["MenuActions", "OkCancelActions", "ChannelSelectBaseActions", "ColorActions","ChannelSelectEPGActions"], 
+        self["actions"] = ActionMap(["MenuActions", "OkCancelActions", "ChannelSelectBaseActions", "ColorActions", "ChannelSelectEPGActions"], 
         {
             "menu": self.menu,
             "ok": self.save,
@@ -373,7 +373,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             "showEPGList": self.dvbinfo,
             "nextBouquet": self.checkdriverversion,
             "prevBouquet": self.scannetwork,
-        },-2)
+        }, -2)
         self.onLayoutFinish.append(self.layoutFinished)
 
     ########################################################
@@ -500,8 +500,8 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                     path = config.plugins.SundtekControlCenter.networkIp.value
                     if path:
                        for i in sundtek_devices:
-                           networkpath = sundtek_devices[i]['network_path'].replace(":0","")
-                           retval = path.replace(":0","")
+                           networkpath = sundtek_devices[i]['network_path'].replace(":0", "")
+                           retval = path.replace(":0", "")
                            if (networkpath == retval):
                                found = 1
                                break
@@ -559,7 +559,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
     def configinfo(self):
         self.prompt("cat /etc/sundtek.conf")
 
-    def thismenuCallback(self,ret):
+    def thismenuCallback(self, ret):
         ret and ret[1]()
 
     def setfixtunerstype(self):
@@ -670,7 +670,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             sundtek_devices[i]['network_path'] = networkpath_result[i]
             sundtek_devices[i]['network_device'] = net_result[i]
             sundtek_devices[i]['capabilities'] = cap_result[i]
-            device_choices.append(('%d' % i, "%d %s" % (i + 1,device_result[i][0:23])))
+            device_choices.append(('%d' % i, "%d %s" % (i + 1, device_result[i][0:23])))
 
         device_choices_whitelist = device_choices
         for i in range(0, vtuner_nifs):
@@ -715,7 +715,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             ]
             list.extend(sublist)
 
-        for i in range(0,vtuner_nifs):
+        for i in range(0, vtuner_nifs):
           list.append(getConfigListEntry(_("Enable Tuner %d") % int(i + 1), config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i]))
           if config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i].value:
             list.append(getConfigListEntry(_("* Device"), config.plugins.SundtekControlCenter.__dict__["devices_%d" % i])) 
@@ -873,7 +873,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 if len(lines) == 6:
                         sticks = [0]
                 elif len(lines) >= 7: 
-                        sticks = [0,0]
+                        sticks = [0, 0]
                 if len(sticks) == 1:
                         sticks[0] = lines[4].split("|")
                         sticks[0] = sticks[0][0].strip() + ":" + sticks[0][1].strip()
@@ -896,8 +896,8 @@ class SundtekControlCenter(Screen, ConfigListScreen):
            found = 0
            if ret:
                for i in sundtek_devices:
-                   networkpath = sundtek_devices[i]['network_path'].replace(":0","")
-                   retval = ret[0].replace(":0","")
+                   networkpath = sundtek_devices[i]['network_path'].replace(":0", "")
+                   retval = ret[0].replace(":0", "")
                    if (networkpath == retval):
                        found = 1
                        break
@@ -1013,7 +1013,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
         else: 
             self.session.open(MessageBox, _("No backups found."), MessageBox.TYPE_INFO, 10)
 
-    def restoremenuCallback(self,ret):
+    def restoremenuCallback(self, ret):
         if ret:
             restore = ("tar -xvpzf /media/hdd/backup/SundtekBackup/%s -C /") % str(ret[0])
             self.prompt(restore) # restore from root
@@ -1061,7 +1061,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
             self.session.openWithCallback(self.disclaimer, MessageBox, _("Sundtek legal notice:\nThis software comes without any warranty, use it at your own risk?\nContinue?"), MessageBox.TYPE_YESNO)
 
     def prompt(self, com):
-        self.session.open(Console,(""), ["%s" % com])
+        self.session.open(Console, (""), ["%s" % com])
 
 ####################################################################
 
@@ -1073,7 +1073,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
         if len(lines) == 6:
             sticks = [0]
         elif len(lines) >= 7:
-            sticks = [0,0]
+            sticks = [0, 0]
 
         if len(sticks) == 1:
             sticks[0] = lines[4].split("|")
@@ -1091,7 +1091,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
         return sticks
 
     def sundtekconfigfile(self):
-        global vtuner_nifs,sundtek_devices
+        global vtuner_nifs, sundtek_devices
         if (len(sundtek_devices) == 0):
            return
         conffile = "/etc/sundtek.conf"
@@ -1104,7 +1104,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
         devices = os.popen("/opt/bin/mediaclient -e").read()
         i = 0
         while True:
-            match = pattern.search(devices,i)
+            match = pattern.search(devices, i)
             if match:
                 results.append(match.group(1))
                 i = match.end() + 1
@@ -1155,7 +1155,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
 
         #### sticks
         netsection = ""
-        for i in range(0,len(sundtek_devices)):
+        for i in range(0, len(sundtek_devices)):
             if netsection == "" and len(sundtek_devices[i]['network_path']) > 0:
                 netsection = "[NETWORK]\n"
             if (len(sundtek_devices[i]['network_path']) > 0):
@@ -1165,7 +1165,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
         #stick 1 data
         tunerconf = ""
         devlist = []
-        for i in range(0,vtuner_nifs):
+        for i in range(0, vtuner_nifs):
           if config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i].value:
               # quick protection which makes it impossible to register an input twice
             if (config.plugins.SundtekControlCenter.__dict__["devices_%d" % i].value != ""):
@@ -1186,7 +1186,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                try:
                    mode = int(config.plugins.SundtekControlCenter.__dict__['dvbtransmission1_%d' % i].value)
                    mode = str(sundtek_devices[deviceid]['capabilities'][mode][1])
-                   mode = mode.replace("-","")
+                   mode = mode.replace("-", "")
                except:
                    mode = ""
                if mode:
