@@ -4,10 +4,12 @@ from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
 import os
 import gettext
 
+
 def localeInit():
 	lang = language.getLanguage()[:2] # getLanguage returns e.g. "fi_FI" for "language_country"
 	os.environ["LANGUAGE"] = lang # Enigma doesn't set this (or LC_ALL, LC_MESSAGES, LANG). gettext needs it!
 	gettext.bindtextdomain("SundtekControlCenter", resolveFilename(SCOPE_PLUGINS, "Extensions/SundtekControlCenter/locale"))
+
 
 def _(txt):
 	t = gettext.dgettext("SundtekControlCenter", txt)
@@ -16,6 +18,6 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 
+
 localeInit()
 language.addCallback(localeInit)
-
