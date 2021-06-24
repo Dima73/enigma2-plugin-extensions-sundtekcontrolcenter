@@ -25,14 +25,13 @@
 from . import _
 from Plugins.Plugin import PluginDescriptor
 from Components.config import config
-import SundtekControlCenter
-
+from .SundtekControlCenter import SundtekControlCenter
 ####################################################################
 
 
 def main(session, **kwargs):
     try:
-        session.open(SundtekControlCenter.SundtekControlCenter)
+        session.open(SundtekControlCenter)
     except:
         import traceback
         traceback.print_exc()
