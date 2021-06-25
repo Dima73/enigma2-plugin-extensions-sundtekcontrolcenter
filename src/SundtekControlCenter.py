@@ -299,13 +299,13 @@ class SundtekControlCenter(Screen, ConfigListScreen):
           for i in range(0, vtuner_nifs):
              config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i].value = False
              for b in sundtek_devices:
-                if i in self.config_list.keys():
+                if i in list(self.config_list.keys()):
                   if (sundtek_devices[b]['serial'] == self.config_list[i]['serial']):
                     idx = b
                     config.plugins.SundtekControlCenter.__dict__["devices_%d" % i] = ConfigSelection(default='%d' % idx, choices=list(device_choices))
 
                     config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i].value = True
-                    if 'initial_mode' in self.config_list[i].keys():
+                    if 'initial_mode' in list(self.config_list[i].keys()):
                         n = 0
                         for c in sundtek_devices[b]['capabilities']:
                            if c[1] == self.config_list[i]['initial_mode']:
@@ -356,11 +356,11 @@ class SundtekControlCenter(Screen, ConfigListScreen):
            tunertwo = ""
            for i in sundtek_devices:
               if i == 0:
-                 self["tunerone"] = Label(str(sundtek_devices[0]['device'])[2:])
+                 self["tunerone"] = Label(six.ensure_str(sundtek_devices[0]['device'])[2:])
               elif i == 1:
-                 tunertwo = str(sundtek_devices[1]['device'][2:])
+                 tunertwo = six.ensure_str(sundtek_devices[1]['device'][2:])
               else:
-                 tunertwo += "\n" + str(sundtek_devices[i]['device'][2:])
+                 tunertwo += "\n" + six.ensure_str(sundtek_devices[i]['device'][2:])
 
            self["tunertwo"] = Label(tunertwo)
 
@@ -388,6 +388,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 ### search for sundtekcontrolcenter updates
                 try:
                         version = urlopen('http://sundtek.de/media/latest.phtml?sccv=1').read()
+                        version = six.ensure_str(version)
                         version = version.replace('sundtekcontrolcenter-', '')
                 except:
                         version = "n/a"
@@ -407,9 +408,10 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 s = r"(?P<year>\d{2})(?P<month>\d{2})(?P<day>\d{2}).(?P<hours>\d{2})(?P<minutes>\d{2})(?P<seconds>\d{2})"
                 pattern = re.compile(s)
                 try:
-                        netdriver = urlopen('http://sundtek.de/media/latest.phtml?scc').read()
+                    netdriver = urlopen('http://sundtek.de/media/latest.phtml?scc').read()
+                    netdriver = six.ensure_str(netdriver)
                 except:
-                        netdriver = "n/a"
+                    netdriver = "n/a"
                 match = pattern.search(netdriver)
                 if match:
                         netdriver = match.group("year") + match.group("month") + match.group("day") + match.group("hours") + match.group("minutes") + match.group("seconds")
@@ -681,8 +683,8 @@ class SundtekControlCenter(Screen, ConfigListScreen):
 
     def updateSettingList(self):
         global orginal_dmm, vtuner_nifs
-        list = [] ### creating list
-        list.append(getConfigListEntry(_("* Configuration support"), config.plugins.SundtekControlCenter.sunconf.support))
+        optionlist = [] ### creating optionlist
+        optionlist.append(getConfigListEntry(_("* Configuration support"), config.plugins.SundtekControlCenter.sunconf.support))
         if config.plugins.SundtekControlCenter.sunconf.support.value == "1":
             sublist = [
                 getConfigListEntry(_("      Autostart"), config.plugins.SundtekControlCenter.sunconf.autostart),
@@ -692,20 +694,20 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 getConfigListEntry(_("      Hardware PID Filter"), config.plugins.SundtekControlCenter.sunconf.dmhwpidfilter),
                 getConfigListEntry(_("      vTuner acceleration for DM800"), config.plugins.SundtekControlCenter.sunconf.vtuneracceleration),
             ]
-            list.extend(sublist)
+            optionlist.extend(sublist)
 
         for i in range(0, vtuner_nifs):
-          list.append(getConfigListEntry(_("Enable Tuner %d") % int(i + 1), config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i]))
+          optionlist.append(getConfigListEntry(_("Enable Tuner %d") % int(i + 1), config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i]))
           if config.plugins.SundtekControlCenter.__dict__["tuner_enabled_%d" % i].value:
-            list.append(getConfigListEntry(_("* Device"), config.plugins.SundtekControlCenter.__dict__["devices_%d" % i]))
-            list.append(getConfigListEntry(_("* DVB Mode"), config.plugins.SundtekControlCenter.__dict__["dvbtransmission1_%d" % i]))
-        list.append(getConfigListEntry(_("Scan and connect to a TV Server"), config.plugins.SundtekControlCenter.scanNetwork))
-        list.append(getConfigListEntry(_("Connect to TV Server IP"), config.plugins.SundtekControlCenter.networkIp))
+            optionlist.append(getConfigListEntry(_("* Device"), config.plugins.SundtekControlCenter.__dict__["devices_%d" % i]))
+            optionlist.append(getConfigListEntry(_("* DVB Mode"), config.plugins.SundtekControlCenter.__dict__["dvbtransmission1_%d" % i]))
+        optionlist.append(getConfigListEntry(_("Scan and connect to a TV Server"), config.plugins.SundtekControlCenter.scanNetwork))
+        optionlist.append(getConfigListEntry(_("Connect to TV Server IP"), config.plugins.SundtekControlCenter.networkIp))
         if not orginal_dmm:
-            list.append(getConfigListEntry(_("Auto checking new version driver/plugin"), config.plugins.SundtekControlCenter.sunconf.searchversion))
-        list.append(getConfigListEntry(_("Add show plugin"), config.plugins.SundtekControlCenter.display))
-        self["config"].list = list
-        self["config"].l.setList(list)
+            optionlist.append(getConfigListEntry(_("Auto checking new version driver/plugin"), config.plugins.SundtekControlCenter.sunconf.searchversion))
+        optionlist.append(getConfigListEntry(_("Add show plugin"), config.plugins.SundtekControlCenter.display))
+        self["config"].list = optionlist
+        self["config"].l.setList(optionlist)
 
     def layoutFinished(self):
         self.setTitle(_("Sundtek Control Center"))
@@ -761,6 +763,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                    return
                 try:
                         self.version = urlopen('http://sundtek.de/media/latest.phtml?sccv=1').read()
+                        self.version = six.ensure_str(self.version)
                         self.version = self.version.replace('sundtekcontrolcenter-', '')
                 except:
                         self.version = "n/a"
@@ -817,6 +820,7 @@ class SundtekControlCenter(Screen, ConfigListScreen):
                 text = _("Build date :")
                 try:
                         netdriver = urlopen('http://sundtek.de/media/latest.phtml?scc').read()
+                        netdriver = six.ensure_str(netdriver)
                 except:
                         netdriver = text + "n/a"
                 match = pattern.search(netdriver)
