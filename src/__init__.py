@@ -14,7 +14,7 @@ def localeInit():
 def _(txt):
 	t = gettext.dgettext("SundtekControlCenter", txt)
 	if t == txt:
-		#print "[SundtekControlCenter] fallback to default translation for", txt
+		#print("[SundtekControlCenter] fallback to default translation for", txt)
 		t = gettext.gettext(txt)
 	return t
 
